@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         prevyear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent prev=new Intent(getApplicationContext(),register.class);
+                Intent prev=new Intent(getApplicationContext(),branch_paper.class);
                 startActivity(prev);
             }
         });
