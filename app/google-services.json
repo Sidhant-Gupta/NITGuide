@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "244396606945",
+    "firebase_url": "https://nit-guide.firebaseio.com",
+    "project_id": "nit-guide",
+    "storage_bucket": "nit-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244396606945:android:c653ab4eda2d8973c07ea0",
+        "android_client_info": {
+          "package_name": "com.example.nit_guide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "244396606945-8t06an6mvpts8vgg14ri1p3t9cna01vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nit_guide",
+            "certificate_hash": "740da3c5b81caa3a902f6d144c30ad8062c37237"
+          }
+        },
+        {
+          "client_id": "244396606945-6kjt56dsasalaa35alcqt6p8jgu6egv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEstgRImXJYB8QnNeTn1rXNcc4WuYks50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "244396606945-6kjt56dsasalaa35alcqt6p8jgu6egv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
