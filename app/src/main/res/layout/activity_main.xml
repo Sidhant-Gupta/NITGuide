@@ -7,11 +7,19 @@
     android:id="@+id/drawerlayout"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:layout_width="240dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:background="@color/colorPrimary"></LinearLayout>-->
+
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/colorPrimary"></LinearLayout>
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/header"
+        ></com.google.android.material.navigation.NavigationView>
 
     <LinearLayout
         android:layout_width="wrap_content"
