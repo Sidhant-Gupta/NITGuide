@@ -1,15 +1,26 @@
 package com.example.nit_guide;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+//import android.widget.Toolbar;
+
+public class MainActivity extends AppCompatActivity {
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
+    ActionBarDrawerToggle actionBarDrawerToggle;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         ImageView cdetails=(ImageView) findViewById(R.id.cdetails);
         ImageView prevyear=(ImageView) findViewById(R.id.prevyear);
 
+        setUpToolbar();
+
         prevyear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent prev=new Intent(getApplicationContext(),branch_paper.class);
+           
                 startActivity(prev);
             }
         });
@@ -61,15 +75,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(sIntent);
             }
         });
-//        gmail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent gintent=new Intent();
-//                gintent.setAction(Intent.ACTION_SEND);
-//                gintent.putExtra(Intent.EXTRA_SUBJECT,"wohoo");
-//                gintent.putExtra(Intent.EXTRA_TEXT,"United States");
-//
-//            }
-//        });
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void setUpToolbar(){
+        drawerLayout=(DrawerLayout) findViewById(R.id.drawerlayout);
+        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        actionBarDrawerToggle =new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.app_name,R.string.app_name);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+    }
+
 }
