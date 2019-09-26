@@ -2,9 +2,14 @@ package com.example.nit_guide;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
+
+import javax.security.auth.Subject;
 
 public class branch_paper extends AppCompatActivity {
 
@@ -23,27 +28,56 @@ public class branch_paper extends AppCompatActivity {
         comp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
             }
         });
 
         civil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
             }
         });
 
         it.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
             }
         });
 
         mech.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
 
             }
         });
@@ -51,14 +85,28 @@ public class branch_paper extends AppCompatActivity {
         elect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
             }
         });
 
         ece.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ArrayList<String> SubjectList = new ArrayList<String>();
+                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                for(int i=0;i<stringArray.length;i++){
+                    SubjectList.add(stringArray[i]);
+                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("String Array",SubjectList);
+                startActivity(comp);
             }
         });
 

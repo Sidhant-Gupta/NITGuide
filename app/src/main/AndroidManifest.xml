@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.nit_guide">
-
+    <!-- <supports-screens> -->
+    <!-- android:resizeable="true" -->
+    <!-- android:smallScreens="true" -->
+    <!-- android:normalScreens="true" -->
+    <!-- android:largeScreens="true" -->
+    <!-- android:xlargeScreens="true" -->
+    <!-- android:anyDensity="true" -->
+    <!-- </supports-screens> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +17,8 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".branch_paper"></activity>
+        <activity android:name=".ListSubjects"></activity>
+        <activity android:name=".branch_paper" />
         <activity android:name=".profile" />
         <activity android:name=".MainActivity" />
         <activity android:name=".login" />
@@ -26,18 +34,9 @@
             </intent-filter>
         </activity>
     </application>
-<!--    <supports-screens>-->
-<!--        android:resizeable="true"-->
-<!--        android:smallScreens="true"-->
-<!--        android:normalScreens="true"-->
-<!--        android:largeScreens="true"-->
-<!--        android:xlargeScreens="true"-->
-<!--        android:anyDensity="true"-->
-<!--    </supports-screens>-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <dist:module dist:instant="true" />
 
