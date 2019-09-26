@@ -10,6 +10,7 @@
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         app:columnCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,8 +107,8 @@
             android:layout_width="133dp"
             android:layout_height="46dp"
             android:layout_margin="40dp"
-            android:layout_marginTop="70dp"
             android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
 
             android:text="   Civil "
             android:textSize="25dp"
@@ -131,8 +132,8 @@
             android:layout_width="133dp"
             android:layout_height="46dp"
             android:layout_margin="40dp"
-            android:layout_marginTop="70dp"
             android:layout_marginLeft="35dp"
+            android:layout_marginTop="70dp"
 
             android:text="Mechanical"
             android:textSize="25dp"
