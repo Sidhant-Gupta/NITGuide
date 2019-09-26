@@ -34,7 +34,7 @@ public class branch_paper extends AppCompatActivity {
                     SubjectList.add(stringArray[i]);
                 }
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
-                comp.putExtra("String Array",SubjectList);
+                comp.putStringArrayListExtra("String Array",SubjectList);
                 startActivity(comp);
             }
         });

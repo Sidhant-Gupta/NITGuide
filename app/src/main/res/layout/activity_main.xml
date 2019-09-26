@@ -108,7 +108,7 @@
                 android:layout_width="124dp"
                 android:layout_height="33dp"
                 android:layout_marginLeft="50dp"
-                android:text="Gmail"
+                android:text="Exam"
                 android:textSize="20sp"
                 app:layout_column="0"
                 app:layout_row="1" />

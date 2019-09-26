@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent prev=new Intent(getApplicationContext(),branch_paper.class);
-           
+
                 startActivity(prev);
             }
         });
