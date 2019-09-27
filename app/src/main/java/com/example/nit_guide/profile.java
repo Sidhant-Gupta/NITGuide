@@ -1,24 +1,22 @@
 package com.example.nit_guide;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,13 +31,11 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
-
 public class profile extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST =234 ;
     private FirebaseAuth firebaseauth;
     TextView tv_hello;
-    Button btn_logout,btn_chose,btn_upload;
+    Button btn_logout,btn_chose,btn_upload,btn_home;
     ImageView iv_file;
     private Uri filepath;//uri are actually url which are meant for local storage
     //so it is actually a path to our files in local storage
@@ -72,9 +68,18 @@ public class profile extends AppCompatActivity {
         btn_chose=(Button)findViewById(R.id.btn_chose);
         btn_upload=(Button)findViewById(R.id.btn_upload);
         iv_file=(ImageView) findViewById(R.id.iv_file);
+        btn_home=(Button) findViewById(R.id.btn_home);
 
 
         tv_hello.setText("Welcome " +user.getEmail());
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent hintent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(hintent);
+            }
+        });
 
         btn_chose.setOnClickListener(new View.OnClickListener() {
             @Override
