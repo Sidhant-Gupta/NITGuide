@@ -14,6 +14,7 @@
         <!--android:background="@color/colorPrimary"></LinearLayout>-->
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -108,7 +109,7 @@
                 android:layout_width="124dp"
                 android:layout_height="33dp"
                 android:layout_marginLeft="50dp"
-                android:text="Exam"
+                android:text="Gmail"
                 android:textSize="20sp"
                 app:layout_column="0"
                 app:layout_row="1" />
