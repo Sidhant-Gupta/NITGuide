@@ -20,7 +20,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_reg" />
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
 
     <EditText
         android:id="@+id/et_pas_login"
@@ -73,7 +73,7 @@
         tools:text="Already have an account?Sign in " />
 
     <TextView
-        android:id="@+id/tv_reg"
+        android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
