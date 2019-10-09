@@ -8,13 +8,29 @@
     style="@style/ThemeOverlay.AppCompat.Dark">
     
     <ImageView
+        android:id="@+id/user_img"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/user" />
 
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/app_name" />-->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/username"
+        android:layout_gravity="left"
         android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+        android:layout_width="wrap_content"
+        android:text="Username"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/usermail"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Email"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

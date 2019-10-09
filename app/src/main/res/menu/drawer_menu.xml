@@ -5,24 +5,33 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home">
-
-        </item>
+            android:icon="@drawable/home"
+            android:title="Home" />
         <item
             android:id="@+id/nav_acad"
-            android:title="Academic Calender"></item>
+            android:icon="@drawable/calendar"
+            android:title="Academic Calender" />
         <item
             android:id="@+id/nav_notifs"
+            android:icon="@drawable/notif"
             android:title="Notifications"></item>
     </group>
+
     <group
         android:id="@+id/gp2"
         android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share"
+            android:title="Share" />
         <item
             android:id="@+id/nav_contact"
+            android:icon="@drawable/contact"
             android:title="Contact Us">
 
         </item>
+
     </group>
 
 </menu>
