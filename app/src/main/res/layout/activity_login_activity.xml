@@ -54,7 +54,7 @@
         tools:text="Login" />
 
     <TextView
-        android:id="@+id/tv11"
+        android:id="@+id/tv_log"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.879"
+        app:layout_constraintVertical_bias="0.594"
         tools:text="Don't have an account?Sign Up" />
 
     <TextView
@@ -94,24 +94,23 @@
         android:layout_height="204dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_reg
-"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reg"
+        app:srcCompat="@drawable/nit_kkr" />
+        app:layout_constraintTop_toBottomOf=""
         app:srcCompat="@drawable/nit_kkr" />
 
     <TextView
-        android:id="@+id/tv_reg
-"
+        android:id="@+id/tv_reg"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Welcome"

@@ -59,7 +59,7 @@ public class login_activity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),profile.class));
         }
 
-        tv_log=(TextView) findViewById(R.id.tv);
+        tv_log=(TextView) findViewById(R.id.tv_log);
         tv_reg=(TextView) findViewById(R.id.tv);
         btn_login=(Button) findViewById(R.id.btn_login);
         et_email_login=(EditText) findViewById(R.id.et_email_login);
