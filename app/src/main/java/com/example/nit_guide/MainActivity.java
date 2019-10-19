@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     // Write a message to the database
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+//    FirebaseDatabase database = FirebaseDatabase.getInstance();
+//    DatabaseReference myRef = database.getReference("message");
 
 
 //    myRef.child()
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_main);
 
         ImageView places=(ImageView) findViewById(R.id.places);
         ImageView website=(ImageView) findViewById(R.id.website);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setUpToolbar();
         drawerLayout = findViewById (R.id.drawerlayout);
-        NavigationView navigationView=findViewById (R.id.navigationDrawer);
+        NavigationView navigationView=findViewById (R.id.navigationView);
         navigationView.setNavigationItemSelectedListener (this);
         TextView username=(TextView) findViewById (R.id.username);
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Log.d ("user.getEmail()","yaay");
         System.out.println(user.getEmail());
         System.out.println (" rrrrrrrrrrrrrrrr " + user.getDisplayName ());
-        usermail.setText(user.getEmail ());
+        //usermail.setText(user.getEmail ());
         prevyear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

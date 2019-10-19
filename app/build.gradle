@@ -33,13 +33,15 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation 'com.google.firebase:firebase-auth:19.0.0'
-    implementation 'com.google.android.material:material:1.0.0-alpha1'
+    implementation 'com.google.android.material:material:1.1.0-beta01'
     implementation 'androidx.drawerlayout:drawerlayout:1.0.0'
     implementation 'androidx.cardview:cardview'
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
-
+    //noinspection GradleCompatible
+    //for custom toolbar!!
+    implementation "com.android.support:support-core-utils:28.0.0"
 }
 
 apply plugin: 'com.google.gms.google-services'
