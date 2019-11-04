@@ -14,9 +14,12 @@
         android:normalScreens="true"
         android:largeScreens="true"
         android:xlargeScreens="true"
-        android:anyDensity="true"
-    </supports-screens>
+        android:anyDensity="true"</supports-screens>
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
 
     <application
         android:allowBackup="true"
@@ -25,12 +28,9 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ListSubjects"></activity>
+        <activity android:name=".contact_list"></activity>
+        <activity android:name=".ListSubjects" />
         <activity android:name=".branch_paper" />
-
-        
-
         <activity android:name=".profile" />
         <activity android:name=".MainActivity" />
         <activity android:name=".login" />
@@ -47,10 +47,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <dist:module dist:instant="true" />
 
 </manifest>
