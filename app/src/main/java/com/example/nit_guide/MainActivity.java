@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.setType("plain/text");
                 intent.putExtra(Intent.EXTRA_TEXT, "Like and Comment!");
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Ho gya Share :O");
-                startActivity(Intent.createChooser(intent, "Share Using..."));
+                startActivity(Intent.createChooser(intent, "Share Via..."));
                 break;
             case R.id.nav_home:
                 break;

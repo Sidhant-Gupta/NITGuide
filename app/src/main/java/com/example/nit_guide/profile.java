@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -62,7 +63,9 @@ public class profile extends AppCompatActivity {
         }
 
         FirebaseUser user=firebaseauth.getCurrentUser();
-
+        String name=user.getDisplayName ();
+//        Log.d("Iwanttoknow",user.getDisplayName());
+//        System.out.print ("DisplayName"+user.getDisplayName());
         tv_hello=(TextView) findViewById(R.id.tv_hello);
         btn_logout=(Button) findViewById(R.id.btn_logout);
         btn_chose=(Button)findViewById(R.id.btn_chose);

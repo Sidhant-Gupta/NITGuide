@@ -71,7 +71,7 @@ public class branch_paper extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<String> SubjectList = new ArrayList<String>();
-                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+                String[] stringArray={"Mchine Design","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
                 for(int i=0;i<stringArray.length;i++){
                     SubjectList.add(stringArray[i]);
                 }

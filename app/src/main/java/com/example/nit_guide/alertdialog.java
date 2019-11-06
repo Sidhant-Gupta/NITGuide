@@ -24,28 +24,28 @@ public class alertdialog extends AppCompatActivity {
             tv.setText ("Library"+'\n'+"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place."+"\n"+"ADDRESS: Infront of the Juice Corner.");
         }
         else if(value.equals ("CCN")){
-            tv.setText ("CCN"+'\n'+"The Centre of Computer networking.It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\"+\"\\n\"+\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("CCN"+'\n'+"The Centre of Computer networking.It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Juice Corner")){
-            tv.setText ("Library"+'\n'+"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\"+\"\\n\"+\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Library"+'\n'+"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("NIT Market")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("NIT Market\n It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Senate Hall")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Senate Hall\n It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Administrative Block")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Administrative Block\n It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Moxie's Grill Canteen")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Moxie's Grill Canteen\nIt is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Amul Canteen")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Amul Canteen\nIt is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Jubilee Hall")){
-            tv.setText ("Library\"+'\\n'+\"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\\\"+\\\"\\\\n\\\"+\\\"ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("Jubilee Hall\nIt is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
         }
     }
 }
