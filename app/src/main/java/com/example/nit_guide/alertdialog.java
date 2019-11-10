@@ -24,7 +24,7 @@ public class alertdialog extends AppCompatActivity {
             tv.setText ("Library"+'\n'+"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place."+"\n"+"ADDRESS: Infront of the Juice Corner.");
         }
         else if(value.equals ("CCN")){
-            tv.setText ("CCN"+'\n'+"The Centre of Computer networking.It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );
+            tv.setText ("CCN"+'\n'+"The Centre of Computer networking.It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place. It provides you well updated PCs\n ADDRESS: Infront of the Juice Corner." );
         }
         else if(value.equals ("Juice Corner")){
             tv.setText ("Library"+'\n'+"It is a good place to study. If you need a serene and quiet place to get your grey cells working, this is the right place.\n ADDRESS: Infront of the Juice Corner." );

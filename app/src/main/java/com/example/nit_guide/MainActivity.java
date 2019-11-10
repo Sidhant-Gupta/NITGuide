@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView cdetails=(ImageView) findViewById(R.id.cdetails);
         ImageView prevyear=(ImageView) findViewById(R.id.prevyear);
         ImageView timetable=(ImageView) findViewById (R.id.timetable);
-
+        ImageView book=(ImageView) findViewById (R.id.books);
         setUpToolbar();
         drawerLayout = findViewById (R.id.drawerlayout);
         NavigationView navigationView=findViewById (R.id.navigationView);
@@ -116,6 +116,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(sIntent);
             }
         });
+        book.setOnClickListener (new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext (),books.class);
+                startActivity (i);
+            }
+        });
+
     }
 
     @Override
@@ -138,6 +146,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 break;
             case R.id.nav_notifs:
+//                Intent sIntent=new Intent(getApplicationContext(),news.class);
+//                startActivity(sIntent);
                 break;
             case R.id.nav_contact:
                 break;

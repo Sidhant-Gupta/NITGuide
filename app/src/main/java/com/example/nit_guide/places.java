@@ -46,7 +46,7 @@ public class places extends AppCompatActivity {
 
 //                AlertDialog.Builder first=new AlertDialog.Builder (places.this);
 //                first.setTitle ("");
-                Intent intent=new Intent (getApplicationContext (),alertdialog.class);
+                Intent intent=new Intent (getApplicationContext (),MapsActivity.class);
                 intent.putExtra ("name", allPlaces.get (pos));
                 startActivity (intent);
 
