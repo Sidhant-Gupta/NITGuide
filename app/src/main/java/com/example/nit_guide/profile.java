@@ -103,7 +103,7 @@ public class profile extends AppCompatActivity {
                 if(filepath!=null)//successfully chosen a file
                     upload_file(filepath);
                 else
-                    Toast.makeText(profile.this,"First please select a file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(profile.this,"Please choose a file",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -134,7 +134,7 @@ public class profile extends AppCompatActivity {
         //offer user to select a file using file manager
         //to do this we need to use intent
         Intent file_choser=new Intent();
-        file_choser.setType("application/pdf");
+        file_choser.setType("*/*");
         file_choser.setAction(Intent.ACTION_GET_CONTENT);//to fetch files
 //        startActivityForResult(Intent.createChooser(file_choser,"Select an Image"),PICK_IMAGE_REQUEST);//launch the intent
         startActivityForResult(file_choser,86);//after this line is executed onActivityResult method will be automatically invoked

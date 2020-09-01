@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintBottom_toTopOf="@id/period1"
+        app:layout_constraintStart_toEndOf="@+id/hardcodeday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hardcodeday"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="5dp"
+        android:text="Day:"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/period1"/>
+
+    <TextView
+        android:id="@+id/period1time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="8:30 - 9:25"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period2time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hardcodeday" />
+
+    <TextView
+        android:id="@+id/period1"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:textSize="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/period2"
+        app:layout_constraintLeft_toRightOf="@+id/period1time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day" />
+
+    <TextView
+        android:id="@+id/period2time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="9:25 - 10:20"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period1time"
+        app:layout_constraintBottom_toTopOf="@id/period3time" />
+
+    <TextView
+        android:id="@+id/period2"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="1dp"
+        app:layout_constraintBottom_toTopOf="@id/period3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period2time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period1" />
+
+    <TextView
+        android:id="@+id/period3time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="10:40 - 11:35"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period2time"
+        app:layout_constraintBottom_toTopOf="@id/period4time"/>
+
+    <TextView
+        android:id="@+id/period3"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period3time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period2" />
+
+
+    <TextView
+        android:id="@+id/period4time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="11:35 - 12:30"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period5time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period3time" />
+
+    <TextView
+        android:id="@+id/period4"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period4time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period3" />
+
+    <TextView
+        android:id="@+id/period5time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="12:30 - 1:25"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/period6time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period4time" />
+
+    <TextView
+        android:id="@+id/period5"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period5time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period4" />
+
+    <TextView
+        android:id="@+id/period6time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="1:45 - 2:40"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period7time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period5time" />
+
+    <TextView
+        android:id="@+id/period6"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period6time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period5" />
+
+    <TextView
+        android:id="@+id/period7time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="2:40 - 3:35"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period8time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period6time" />
+
+    <TextView
+        android:id="@+id/period7"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@id/period8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period7time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period6" />
+
+
+    <TextView
+        android:id="@+id/period8time"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginTop="2dp"
+        android:text="3:35 - 4:30"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintRight_toLeftOf="@id/period8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period7time" />
+
+    <TextView
+        android:id="@+id/period8"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/period8time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/period7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

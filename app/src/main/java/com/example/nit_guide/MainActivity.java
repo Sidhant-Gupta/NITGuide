@@ -1,5 +1,6 @@
 package com.example.nit_guide;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -17,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -55,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView cdetails=(ImageView) findViewById(R.id.cdetails);
         ImageView prevyear=(ImageView) findViewById(R.id.prevyear);
         ImageView timetable=(ImageView) findViewById (R.id.timetable);
-        ImageView book=(ImageView) findViewById (R.id.books);
+
+
+
         setUpToolbar();
         drawerLayout = findViewById (R.id.drawerlayout);
         NavigationView navigationView=findViewById (R.id.navigationView);
@@ -81,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent time=new Intent(getApplicationContext (),timetable.class);
+                startActivity(time);
             }
         });
 
@@ -114,13 +121,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 Intent sIntent=new Intent(getApplicationContext(),contact.class);
                 startActivity(sIntent);
-            }
-        });
-        book.setOnClickListener (new View.OnClickListener ( ) {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext (),books.class);
-                startActivity (i);
             }
         });
 

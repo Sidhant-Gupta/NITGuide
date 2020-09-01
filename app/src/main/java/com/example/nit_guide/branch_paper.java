@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -25,6 +26,23 @@ public class branch_paper extends AppCompatActivity {
         ImageView elect=(ImageView)findViewById(R.id.electrical_img);
         ImageView mech=(ImageView)findViewById(R.id.mechanical_img);
 
+        Button up=(Button)findViewById (R.id.button2);
+        Button home=(Button) findViewById (R.id.button3);
+//        Button upload=(Button)findViewById (R.id.upload_btn);
+        up.setOnClickListener (new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext (),profile.class);
+                startActivity (intent);
+            }
+        });
+        home.setOnClickListener (new View.OnClickListener (){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (getApplicationContext (),MainActivity.class);
+                startActivity (intent);
+            }
+        });
         comp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

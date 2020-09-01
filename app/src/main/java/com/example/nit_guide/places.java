@@ -35,8 +35,6 @@ public class places extends AppCompatActivity {
         allPlaces.add("Jubilee Hall");
         allPlaces.add("Juice Corner");
 
-
-
         ArrayAdapter<String>arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,allPlaces);
         lview.setAdapter(arrayAdapter);
 
@@ -47,7 +45,8 @@ public class places extends AppCompatActivity {
 //                AlertDialog.Builder first=new AlertDialog.Builder (places.this);
 //                first.setTitle ("");
                 Intent intent=new Intent (getApplicationContext (),MapsActivity.class);
-                intent.putExtra ("name", allPlaces.get (pos));
+                intent.putExtra ("name", allPlaces.get (pos).toString ());
+
                 startActivity (intent);
 
             }

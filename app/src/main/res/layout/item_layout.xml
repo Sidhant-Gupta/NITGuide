@@ -9,12 +9,12 @@
     android:background="#E8EAF6"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload">
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Upload">-->
 
-    </TextView>
+<!--    </TextView>-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
