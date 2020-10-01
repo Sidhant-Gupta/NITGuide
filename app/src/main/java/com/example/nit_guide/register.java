@@ -121,7 +121,7 @@ public class register extends AppCompatActivity {
                 }
                 else{
                     progressDialog.dismiss();
-                    Toast.makeText(register.this, "Could not Register", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register.this, "Could not sign in", Toast.LENGTH_SHORT).show();
 
                 }
             }

@@ -101,8 +101,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_reg"
         app:srcCompat="@drawable/nit_kkr" />
-        app:layout_constraintTop_toBottomOf=""
-        app:srcCompat="@drawable/nit_kkr" />
 
     <TextView
         android:id="@+id/tv_reg"

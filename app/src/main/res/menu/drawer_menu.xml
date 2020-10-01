@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item-->
+<!--        android:id="@+id/action_settings"-->
+<!--        android:icon="@drawable/home"-->
+<!--        android:title="Settings"-->
+<!--        app:showAsAction="ifRoom"/>-->
+
+
+
     <group
         android:id="@+id/gp1"
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home">
-
-        </item>
+            android:icon="@drawable/home"
+            android:title="Home" />
         <item
             android:id="@+id/nav_acad"
-            android:title="Academic Calender"></item>
+            android:icon="@drawable/calendar"
+            android:title="Academic Calender" />
         <item
             android:id="@+id/nav_notifs"
+            android:icon="@drawable/notif"
             android:title="Notifications"></item>
+        <item
+            android:id="@+id/nav_pay"
+            android:icon="@drawable/pay"
+            android:title="Payments"></item>
+        <item
+            android:id="@+id/nav_nearby"
+            android:icon="@drawable/rest"
+            android:title="Nearby Restau"></item>
     </group>
+
     <group
         android:id="@+id/gp2"
         android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share"
+            android:title="Share" />
         <item
             android:id="@+id/nav_contact"
+            android:icon="@drawable/contact"
             android:title="Contact Us">
 
         </item>
+
     </group>
 
 </menu>

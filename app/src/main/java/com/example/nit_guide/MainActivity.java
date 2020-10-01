@@ -1,74 +1,93 @@
 package com.example.nit_guide;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 //import android.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView navigationView;
 
+
+
+    // Write a message to the database
+//    FirebaseDatabase database = FirebaseDatabase.getInstance();
+//    DatabaseReference myRef = database.getReference("message");
+
+
+//    myRef.child()
+
+//    myRef.setValue("Hello, World!");
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_main);
 
         ImageView places=(ImageView) findViewById(R.id.places);
         ImageView website=(ImageView) findViewById(R.id.website);
         ImageView cmap=(ImageView) findViewById(R.id.cmap);
         ImageView cdetails=(ImageView) findViewById(R.id.cdetails);
         ImageView prevyear=(ImageView) findViewById(R.id.prevyear);
+        ImageView timetable=(ImageView) findViewById (R.id.timetable);
+
+
 
         setUpToolbar();
-
-        navigationView=(NavigationView) findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.nav_acad:
-                        break;
-                    case R.id.nav_contact:
-                        Intent con=new Intent(getApplicationContext(),contact.class);
-                        startActivity(con);
-                        break;
-                    case R.id.nav_home:
-                        Intent h=new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(h);
-                        break;
-                    case R.id.nav_notifs:
-                        break;
-
-                }
-                return false;
-            }
-        });
-
+        drawerLayout = findViewById (R.id.drawerlayout);
+        NavigationView navigationView=findViewById (R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener (this);
+        TextView username=(TextView) findViewById (R.id.username);
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        System.out.print (user.getDisplayName ());
+        //username.setText(user.getDisplayName ());
+        TextView usermail=(TextView) findViewById (R.id.usermail);
+        Log.d ("user.getEmail()","yaay");
+        System.out.println(user.getEmail());
+        System.out.println (" rrrrrrrrrrrrrrrr " + user.getDisplayName ());
+        //usermail.setText(user.getEmail ());
         prevyear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent prev=new Intent(getApplicationContext(),branch_paper.class);
-
                 startActivity(prev);
+            }
+        });
+
+        timetable.setOnClickListener (new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View view) {
+                Intent time=new Intent(getApplicationContext (),timetable.class);
+                startActivity(time);
             }
         });
 
@@ -104,7 +123,39 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(sIntent);
             }
         });
+
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch(menuItem.getItemId ()){
+            case R.id.nav_share:
+//                Intent sendIntent = new Intent();
+//                sendIntent.setAction(Intent.ACTION_SEND);
+//                sendIntent.putExtra(Intent.EXTRA_TEXT,
+//                        "Hey check out my app at: https://play.google.com/store/apps/details?id=com.google.android.apps.plus");
+//                sendIntent.setType("text/plain");
+//                startActivity(sendIntent);
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/text");
+                intent.putExtra(Intent.EXTRA_TEXT, "Like and Comment!");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Ho gya Share :O");
+                startActivity(Intent.createChooser(intent, "Share Via..."));
+                break;
+            case R.id.nav_home:
+                break;
+            case R.id.nav_notifs:
+//                Intent sIntent=new Intent(getApplicationContext(),news.class);
+//                startActivity(sIntent);
+                break;
+            case R.id.nav_contact:
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setUpToolbar(){
         drawerLayout=(DrawerLayout) findViewById(R.id.drawerlayout);
