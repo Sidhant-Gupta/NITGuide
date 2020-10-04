@@ -212,7 +212,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     fetchLastLocation ();
-
                 }
                 break;
         }
