@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".View_TimeTable">
+    tools:context=".activities.View_TimeTable">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:id="@+id/toolbarmain">
+    <!--<androidx.appcompat.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?android:attr/actionBarSize"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:id="@+id/toolbarmain">-->
 
-    </androidx.appcompat.widget.Toolbar>
+    <!--</androidx.appcompat.widget.Toolbar>-->
+
+    <include layout="@layout/toolbar" />
 
     <ListView
         android:id="@+id/lvmain"
@@ -23,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:dividerHeight="10dp"
-        android:layout_below="@id/toolbarmain"
+        android:layout_below="@id/toolbar"
 
         android:divider="@null">
 

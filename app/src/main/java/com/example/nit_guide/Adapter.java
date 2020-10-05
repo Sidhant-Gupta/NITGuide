@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nit_guide.models.modalClass;
+
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Viewholder> {

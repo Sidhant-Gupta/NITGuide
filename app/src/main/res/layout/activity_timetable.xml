@@ -5,21 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Widget.AppCompat.ActionBar"
-    tools:context=".timetable">
+    tools:context=".activities.timetable">
+
+    <include layout="@layout/toolbar" />
 
     <Button
         android:id="@+id/view"
         android:layout_width="131dp"
         android:layout_height="47dp"
-        android:layout_marginTop="272dp"
-        android:background="@android:color/holo_orange_light"
+        android:layout_marginTop="8dp"
+        android:background="@color/cardColor"
         android:text="View Time Table"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/year_spin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/day_spin"
+        app:layout_constraintVertical_bias="0.568" />
 
     <Spinner
         android:id="@+id/year_spin"
@@ -49,10 +50,8 @@
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/day" />
 
     <TextView
         android:id="@+id/branch"
@@ -60,13 +59,13 @@
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="8dp"
         android:text="Select Branch"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/year"
@@ -127,19 +126,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/branch" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@android:color/holo_blue_dark"
-        android:elevation="4dp"
-        android:theme="@style/Widget.AppCompat.ActionBar"
-        app:layout_constraintBottom_toTopOf="@+id/branch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"
-        app:titleTextColor="@color/common_google_signin_btn_text_dark_default" />
+    <!--<androidx.appcompat.widget.Toolbar-->
+        <!--android:id="@+id/my_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:background="@android:color/holo_blue_dark"-->
+        <!--android:elevation="4dp"-->
+        <!--android:theme="@style/Widget.AppCompat.ActionBar"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/branch"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"-->
+        <!--app:titleTextColor="@color/common_google_signin_btn_text_dark_default" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
