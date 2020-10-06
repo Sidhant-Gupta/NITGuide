@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerlayout"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     tools:openDrawer="start">
 
     <FrameLayout
@@ -113,16 +113,6 @@
                 app:layout_column="1"
                 app:layout_row="2"
                 app:srcCompat="@drawable/cmap" />
-
-            <!--            <ImageView-->
-            <!--                android:id="@+id/books"-->
-            <!--                android:layout_width="150dp"-->
-            <!--                android:layout_height="106dp"-->
-            <!--                android:layout_marginTop="40dp"-->
-            <!--                app:layout_column="0"-->
-            <!--                app:layout_row="3"-->
-            <!--                app:srcCompat="@drawable/book" />-->
-
 
             <TextView
                 android:id="@+id/textView2"
