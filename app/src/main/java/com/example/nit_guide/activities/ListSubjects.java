@@ -8,31 +8,83 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.nit_guide.R;
+import com.example.nit_guide.adapters.PageAdapter;
+import com.example.nit_guide.adapters.SubjectAdapter;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class ListSubjects extends AppCompatActivity {
 
+    TabLayout tabLayout;
+    TabItem tabitem1,tabitem2,tabitem3;
+    ViewPager viewPager;
+    PagerAdapter pagerAdapter;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_subjects);
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_list_subjects);
 
-        ArrayList<String> SubjectList = getIntent().getStringArrayListExtra("String Array");
-        ListView lview=(ListView) findViewById(R.id.lview);
+        String Subject = getIntent ( ).getStringExtra ("Subject");
+        setUpToolbar ( );
 
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,SubjectList);
-        lview.setAdapter(arrayAdapter);
-        lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        tabLayout = (TabLayout) findViewById (R.id.tabLayoutSubject);
+        tabitem1 = (TabItem) findViewById ((R.id.tab1));
+        tabitem2 = (TabItem) findViewById (R.id.tab2);
+        tabitem2 = (TabItem) findViewById (R.id.tab3);
+        viewPager = (ViewPager) findViewById (R.id.vpager);
+
+        pagerAdapter = new SubjectAdapter (getSupportFragmentManager ( ), tabLayout.getTabCount ( ));
+        viewPager.setAdapter (pagerAdapter);
+
+//        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,SubjectList);
+//        lview.setAdapter(arrayAdapter);
+//        lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Intent intent=new Intent(getApplicationContext(), papers.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+        tabLayout.setOnTabSelectedListener (new TabLayout.OnTabSelectedListener ( ) {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(getApplicationContext(), papers.class);
-                startActivity(intent);
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem (tab.getPosition ( ));
+
+                if (tab.getPosition ( ) == 0 || tab.getPosition ( ) == 1 || tab.getPosition ( ) == 2) {
+                    pagerAdapter.notifyDataSetChanged ( );
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
+        // listen for scroll or page change
+        viewPager.addOnPageChangeListener (new TabLayout.TabLayoutOnPageChangeListener (tabLayout));
+    }
+
+    private void setUpToolbar(){
+        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjecto-Papyrus");
+        setSupportActionBar(toolbar);
     }
 
 }
