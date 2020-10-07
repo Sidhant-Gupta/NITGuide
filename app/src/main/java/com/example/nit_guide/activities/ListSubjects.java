@@ -53,7 +53,7 @@ public class ListSubjects extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem (tab.getPosition ( ));
 
-                if (tab.getPosition ( ) == 0 || tab.getPosition ( ) == 1 || tab.getPosition ( ) == 2) {
+                if (tab.getPosition ( ) == 0 || tab.getPosition ( ) == 1 || tab.getPosition ( ) == 2 || tab.getPosition()==3) {
                     pagerAdapter.notifyDataSetChanged ( );
                 }
 
