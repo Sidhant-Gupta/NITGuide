@@ -9,13 +9,7 @@
     tools:context=".activities.MainActivity"
     tools:openDrawer="start">
 
-    <FrameLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/pluto">
 
-    </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
@@ -34,151 +28,156 @@
         android:orientation="vertical">
 
         <include layout="@layout/toolbar" />
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container">
+
+    </FrameLayout>
+        <!--<androidx.gridlayout.widget.GridLayout-->
+            <!--android:id="@+id/grid"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="#FFFFFF"-->
+            <!--app:columnCount="2"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:rowCount="5">-->
 
 
-        <androidx.gridlayout.widget.GridLayout
-            android:id="@+id/grid"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="#FFFFFF"
-            app:columnCount="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:rowCount="5">
+            <!--<ImageView-->
+                <!--android:id="@+id/prevyear"-->
+                <!--android:layout_width="134dp"-->
+                <!--android:layout_height="105dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="0"-->
+                <!--app:srcCompat="@drawable/exam" />-->
 
+            <!--<ImageView-->
+                <!--android:id="@+id/timetable"-->
+                <!--android:layout_width="118dp"-->
+                <!--android:layout_height="128dp"-->
+                <!--android:layout_marginLeft="40dp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="0"-->
+                <!--app:srcCompat="@drawable/timetable" />-->
 
-            <ImageView
-                android:id="@+id/prevyear"
-                android:layout_width="134dp"
-                android:layout_height="105dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                app:layout_column="0"
-                app:layout_row="0"
-                app:srcCompat="@drawable/exam" />
+            <!--<ImageView-->
+                <!--android:id="@+id/places"-->
+                <!--android:layout_width="141dp"-->
+                <!--android:layout_height="104dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="1"-->
+                <!--app:srcCompat="@drawable/map" />-->
 
-            <ImageView
-                android:id="@+id/timetable"
-                android:layout_width="118dp"
-                android:layout_height="128dp"
-                android:layout_marginLeft="40dp"
-                app:layout_column="1"
-                app:layout_row="0"
-                app:srcCompat="@drawable/timetable" />
+            <!--<ImageView-->
+                <!--android:id="@+id/cdetails"-->
+                <!--android:layout_width="144dp"-->
+                <!--android:layout_height="110dp"-->
+                <!--android:layout_marginLeft="27dp"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="1"-->
+                <!--app:srcCompat="@drawable/contact_details" />-->
 
-            <ImageView
-                android:id="@+id/places"
-                android:layout_width="141dp"
-                android:layout_height="104dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="40dp"
-                app:layout_column="0"
-                app:layout_row="1"
-                app:srcCompat="@drawable/map" />
+            <!--<ImageView-->
+                <!--android:id="@+id/website"-->
+                <!--android:layout_width="151dp"-->
+                <!--android:layout_height="118dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="2"-->
+                <!--app:srcCompat="@drawable/website" />-->
 
-            <ImageView
-                android:id="@+id/cdetails"
-                android:layout_width="144dp"
-                android:layout_height="110dp"
-                android:layout_marginLeft="27dp"
-                android:layout_marginTop="40dp"
-                app:layout_column="1"
-                app:layout_row="1"
-                app:srcCompat="@drawable/contact_details" />
+            <!--<ImageView-->
+                <!--android:id="@+id/cmap"-->
+                <!--android:layout_width="150dp"-->
+                <!--android:layout_height="106dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="2"-->
+                <!--app:srcCompat="@drawable/cmap" />-->
 
-            <ImageView
-                android:id="@+id/website"
-                android:layout_width="151dp"
-                android:layout_height="118dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="40dp"
-                app:layout_column="0"
-                app:layout_row="2"
-                app:srcCompat="@drawable/website" />
+            <!--<TextView-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_width="124dp"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:layout_marginLeft="25dp"-->
+                <!--android:text="Past Papers"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="1" />-->
 
-            <ImageView
-                android:id="@+id/cmap"
-                android:layout_width="150dp"
-                android:layout_height="106dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                app:layout_column="1"
-                app:layout_row="2"
-                app:srcCompat="@drawable/cmap" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_timetable"-->
+                <!--android:layout_width="124dp"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:layout_marginLeft="50dp"-->
+                <!--android:text="Time table"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="1" />-->
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="124dp"
-                android:layout_height="33dp"
-                android:layout_marginLeft="25dp"
-                android:text="Past Papers"
-                android:textSize="20sp"
-                app:layout_column="0"
-                app:layout_row="1" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_places"-->
+                <!--android:layout_width="96dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="25dp"-->
+                <!--android:text="Places"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="2" />-->
 
-            <TextView
-                android:id="@+id/tv_timetable"
-                android:layout_width="124dp"
-                android:layout_height="33dp"
-                android:layout_marginLeft="50dp"
-                android:text="Time table"
-                android:textSize="20sp"
-                app:layout_column="1"
-                app:layout_row="1" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_contacts"-->
+                <!--android:layout_width="124dp"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:text="Contact"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="2" />-->
 
-            <TextView
-                android:id="@+id/tv_places"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="Places"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_column="0"
-                app:layout_row="2" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_maps"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:layout_marginLeft="39dp"-->
+                <!--android:text="Campus map"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="1"-->
+                <!--app:layout_row="3" />-->
 
-            <TextView
-                android:id="@+id/tv_contacts"
-                android:layout_width="124dp"
-                android:layout_height="33dp"
-                android:layout_marginLeft="30dp"
-                android:text="Contact"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_column="1"
-                app:layout_row="2" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_website"-->
+                <!--android:layout_width="124dp"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:text="Website"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="20sp"-->
+                <!--app:layout_column="0"-->
+                <!--app:layout_row="3" />-->
 
-            <TextView
-                android:id="@+id/tv_maps"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_marginLeft="39dp"
-                android:text="Campus map"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_column="1"
-                app:layout_row="3" />
-
-            <TextView
-                android:id="@+id/tv_website"
-                android:layout_width="124dp"
-                android:layout_height="33dp"
-                android:layout_marginLeft="20dp"
-                android:text="Website"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_column="0"
-                app:layout_row="3" />
-
-        </androidx.gridlayout.widget.GridLayout>
+        <!--</androidx.gridlayout.widget.GridLayout>-->
     </LinearLayout>
 
 
