@@ -20,7 +20,7 @@ public class ListSubjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_subjects);
 
-        ArrayList<String> SubjectList = getIntent().getStringArrayListExtra("String Array");
+        ArrayList<String> SubjectList = getIntent().getStringArrayListExtra("Subject");
         ListView lview=(ListView) findViewById(R.id.lview);
 
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,SubjectList);
