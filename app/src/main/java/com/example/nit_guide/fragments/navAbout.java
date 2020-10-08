@@ -94,7 +94,7 @@ public class navAbout extends Fragment {
         ArrayList<ModelContacts> holder=new ArrayList<>();
         ModelContacts ob1=new ModelContacts();
         ob1.setHeading("Sejal Gupta");
-        ob1.setSubHeading("CEO & Full Stack Developer");
+        ob1.setSubHeading("Full Stack Developer");
         ob1.setImgName(R.drawable.sejal);
         holder.add(ob1);
 

@@ -3,10 +3,12 @@ package com.example.nit_guide.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -30,6 +32,29 @@ public class nearby_places extends AppCompatActivity {
         setupUIView();
         SimpleAdapter simpleAdapter = new SimpleAdapter (this, places);
         lview.setAdapter (simpleAdapter);
+        lview.setOnItemClickListener (new AdapterView.OnItemClickListener ( ) {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected_item = (String)adapterView.getItemAtPosition (i);
+//                System.out.println(selected_item);
+                if(selected_item.equalsIgnoreCase ("Restaurants")){
+                    Intent startIntent=new Intent(getApplicationContext (), Restaurants.class);
+                    startActivity(startIntent);
+                }
+                else if(selected_item.equalsIgnoreCase ("Khokha")){
+                    Intent startIntent=new Intent(getApplicationContext (), khokha.class);
+                    startActivity(startIntent);
+                }
+                else if(selected_item.equalsIgnoreCase ("Travelling List")){
+                    Intent startIntent=new Intent(getApplicationContext (), nearby_places.class);
+                    startActivity(startIntent);
+                }
+                else if(selected_item.equalsIgnoreCase ("Fun Spots")){
+                    Intent startIntent=new Intent(getApplicationContext (), nearby_places.class);
+                    startActivity(startIntent);
+                }
+            }
+        });
     }
 
     private void setupUIView() {
@@ -73,28 +98,28 @@ public class nearby_places extends AppCompatActivity {
             if(view == null){
                 view = li.inflate (R.layout.single_row_contact,null,true);
             }
-            spots = (TextView)findViewById (R.id.tv_heading);
-            spods = (TextView)findViewById (R.id.tv_subheading);
+            spots = (TextView)view.findViewById (R.id.tv_heading);
+            spods = (TextView)view.findViewById (R.id.tv_subheading);
 
-            img = (ImageView)findViewById (R.id.img_contact);
+            img = (ImageView)view.findViewById (R.id.img_contact);
 
             spots.setText (placesnearby[i]);
             spods.setText (placesnearby[i]);
-            img.setImageResource (R.drawable.places_bg);
+//            img.setImageResource (R.drawable.places_bg);
 
 //            "Restaurants", "Khokha", "Travelling List", "Fun Spots"};
-//            if(placesnearby[i].equalsIgnoreCase ("Restaurants")){
-//                img.setImageResource (R.drawable.places_bg);
-//            }
-//            else if(placesnearby[i].equalsIgnoreCase ("Khokha")){
-//                img.setImageResource (R.drawable.places_bg);
-//            }
-//            else if(placesnearby[i].equalsIgnoreCase ("Fun Spots")){
-//                img.setImageResource (R.drawable.places_bg);
-//            }
-//            else if(placesnearby[i].equalsIgnoreCase ("Travelling List")){
-//                img.setImageResource (R.drawable.places_bg);
-//            }
+            if(placesnearby[i].equalsIgnoreCase ("Restaurants")){
+                img.setImageResource (R.drawable.places_bg);
+            }
+            else if(placesnearby[i].equalsIgnoreCase ("Khokha")){
+                img.setImageResource (R.drawable.places_bg);
+            }
+            else if(placesnearby[i].equalsIgnoreCase ("Fun Spots")){
+                img.setImageResource (R.drawable.places_bg);
+            }
+            else if(placesnearby[i].equalsIgnoreCase ("Travelling List")){
+                img.setImageResource (R.drawable.places_bg);
+            }
 
             return view;
         }
