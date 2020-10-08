@@ -26,12 +26,24 @@
 
             <TextView
                 android:id="@+id/tv_contactCard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Restaurants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:text="Dhabas"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="3dp"
+                android:text="*Ordering does not specify anything." />
 
         </RelativeLayout>
 

@@ -104,21 +104,25 @@ public class nearby_places extends AppCompatActivity {
             img = (ImageView)view.findViewById (R.id.img_contact);
 
             spots.setText (placesnearby[i]);
-            spods.setText (placesnearby[i]);
+
 //            img.setImageResource (R.drawable.places_bg);
 
 //            "Restaurants", "Khokha", "Travelling List", "Fun Spots"};
-            if(placesnearby[i].equalsIgnoreCase ("Restaurants")){
-                img.setImageResource (R.drawable.places_bg);
+            if(placesnearby[i].equalsIgnoreCase ("Restaurants and Cafes")){
+                spods.setText ("Because we need a break from mess!");
+                img.setImageResource (R.drawable.restaurant);
             }
-            else if(placesnearby[i].equalsIgnoreCase ("Khokha")){
-                img.setImageResource (R.drawable.places_bg);
+            else if(placesnearby[i].equalsIgnoreCase ("Dhaba")){
+                spods.setText ("Let's agree we can't afford richness 24*7 / because we love that chutney!");
+                img.setImageResource (R.drawable.khokha);
             }
             else if(placesnearby[i].equalsIgnoreCase ("Fun Spots")){
+                spods.setText ("Because we need some city air");
                 img.setImageResource (R.drawable.places_bg);
             }
             else if(placesnearby[i].equalsIgnoreCase ("Travelling List")){
-                img.setImageResource (R.drawable.places_bg);
+                spods.setText ("Because we have a bucket list ;)");
+                img.setImageResource (R.drawable.places);
             }
 
             return view;

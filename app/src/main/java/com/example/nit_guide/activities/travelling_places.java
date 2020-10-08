@@ -1,14 +1,16 @@
-package com.example.nit_guide;
+package com.example.nit_guide.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class gotoLocation extends AppCompatActivity {
+import com.example.nit_guide.R;
+
+public class travelling_places extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_goto_location);
+        setContentView (R.layout.activity_travelling_places);
     }
 }
