@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.nit_guide.R;
+import com.example.nit_guide.fun_spots;
 
 import org.w3c.dom.Text;
 
@@ -28,7 +29,7 @@ public class nearby_places extends AppCompatActivity {
         setContentView (R.layout.activity_nearby_places);
 
 
-        String[] places = new String[]{"Restaurants", "Khokha", "Travelling List", "Fun Spots"};
+        String[] places = new String[]{"Restaurants and Cafes", "Dhaba", "Travelling List", "Fun Spots"};
         setupUIView();
         SimpleAdapter simpleAdapter = new SimpleAdapter (this, places);
         lview.setAdapter (simpleAdapter);
@@ -37,20 +38,20 @@ public class nearby_places extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String selected_item = (String)adapterView.getItemAtPosition (i);
 //                System.out.println(selected_item);
-                if(selected_item.equalsIgnoreCase ("Restaurants")){
+                if(selected_item.equalsIgnoreCase ("Restaurants and Cafes")){
                     Intent startIntent=new Intent(getApplicationContext (), Restaurants.class);
                     startActivity(startIntent);
                 }
-                else if(selected_item.equalsIgnoreCase ("Khokha")){
+                else if(selected_item.equalsIgnoreCase ("Dhaba")){
                     Intent startIntent=new Intent(getApplicationContext (), khokha.class);
                     startActivity(startIntent);
                 }
                 else if(selected_item.equalsIgnoreCase ("Travelling List")){
-                    Intent startIntent=new Intent(getApplicationContext (), nearby_places.class);
+                    Intent startIntent=new Intent(getApplicationContext (), travelling_places.class);
                     startActivity(startIntent);
                 }
                 else if(selected_item.equalsIgnoreCase ("Fun Spots")){
-                    Intent startIntent=new Intent(getApplicationContext (), nearby_places.class);
+                    Intent startIntent=new Intent(getApplicationContext (), fun_spots.class);
                     startActivity(startIntent);
                 }
             }
@@ -113,7 +114,7 @@ public class nearby_places extends AppCompatActivity {
                 img.setImageResource (R.drawable.restaurant);
             }
             else if(placesnearby[i].equalsIgnoreCase ("Dhaba")){
-                spods.setText ("Let's agree we can't afford richness 24*7 / because we love that chutney!");
+                spods.setText ("Let's agree we can't afford richness 24*7!");
                 img.setImageResource (R.drawable.khokha);
             }
             else if(placesnearby[i].equalsIgnoreCase ("Fun Spots")){

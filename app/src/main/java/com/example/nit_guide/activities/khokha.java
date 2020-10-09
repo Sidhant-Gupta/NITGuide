@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.nit_guide.R;
 import com.example.nit_guide.adapters.AdapterContacts;
 import com.example.nit_guide.models.ModelContacts;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class khokha extends AppCompatActivity implements AdapterContacts.onNoteListener {
 
@@ -25,7 +28,15 @@ public class khokha extends AppCompatActivity implements AdapterContacts.onNoteL
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_khokha);
 
+        Random rand = new Random ();
+
+        // Generate random integers in range 0 to 4
+        int rand_int1 = rand.nextInt(5);
+        String tagline[] = new String[]{"If you see me in a restaurant eating something, that means I am kidnapped and signalling you!", "Because I am craving for parantha and chutney", "Food = Happiness", "Come on!! We all run outta cash sometimes.(or many a times)", "Because Thursday's mess menu is :("};
+        Toast.makeText (this, tagline[rand_int1], Toast.LENGTH_LONG).show ( );
         restList = new ArrayList<> ( );
+
+
         restList = dataqueue ( );
         recyclerView = (RecyclerView) findViewById (R.id.rv_contactDep);
         recyclerView.setLayoutManager (new LinearLayoutManager (this));
@@ -88,6 +99,10 @@ public class khokha extends AppCompatActivity implements AdapterContacts.onNoteL
 
     @Override
     public void onNoteClick(int position) {
+
+        Intent t =  new Intent(this, gotoLocation.class);
+        t.putExtra("obj", restList.get (position).getHeading ());
+        startActivity (t);
         System.out.print (position+": yaaay");
     }
 }

@@ -20,6 +20,7 @@ import com.example.nit_guide.adapters.AdapterContacts;
 import com.example.nit_guide.models.ModelContacts;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Restaurants extends AppCompatActivity implements AdapterContacts.onNoteListener {
 
@@ -33,7 +34,16 @@ public class Restaurants extends AppCompatActivity implements AdapterContacts.on
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_restaurants);
 
+        // create instance of Random class
+        Random rand = new Random ();
+
+        // Generate random integers in range 0 to 4
+        int rand_int1 = rand.nextInt(5);
+        String tagline[] = new String[]{"I'm eating because I am bored", "Ways to my heart:Be my Food", "Winner, Winner, Chicken Dinner", "Because my taste buds have become dormant", "Tomorrow we start our diet, promise!"};
+        Toast.makeText (this, tagline[rand_int1], Toast.LENGTH_LONG).show ( );
+
         restList = new ArrayList<> ( );
+
         restList = dataqueue ( );
         recyclerView = (RecyclerView) findViewById (R.id.rv_contactDep);
         recyclerView.setLayoutManager (new LinearLayoutManager (this));
@@ -48,10 +58,10 @@ public class Restaurants extends AppCompatActivity implements AdapterContacts.on
     public ArrayList<ModelContacts> dataqueue() {
         ArrayList<ModelContacts> holder = new ArrayList<> ( );
         ModelContacts ob1 = new ModelContacts ( );
-        ob1.setHeading ("Barcelo' Grill");
+        ob1.setHeading ("Barcelo's Grill");
         ob1.setSubHeading ("Quality non-veg, "+"mandatory picture spot" +
-                "\nRating: 4");
-        ob1.setImgName (R.drawable.dep);
+                "\nRating: 3.7");
+        ob1.setImgName (R.drawable.barcelo);
 
         holder.add (ob1);
 
@@ -60,7 +70,7 @@ public class Restaurants extends AppCompatActivity implements AdapterContacts.on
         ob2.setHeading ("Pizza Hut");
         ob2.setSubHeading ("Affordable, " + "Nice ambiance"+
                 "\nRating: 4");
-        ob2.setImgName (R.drawable.dep);
+        ob2.setImgName (R.drawable.pizzahut);
         holder.add (ob2);
 
 
@@ -68,7 +78,7 @@ public class Restaurants extends AppCompatActivity implements AdapterContacts.on
         ob3.setHeading ("The Vintage Cafe");
         ob3.setSubHeading ("Affordable, " + "Nice ambiance"+
                 "\nRating: 4");
-        ob3.setImgName (R.drawable.dep);
+        ob3.setImgName (R.drawable.vintage);
         holder.add (ob3);
 
         ModelContacts ob4 = new ModelContacts ( );
