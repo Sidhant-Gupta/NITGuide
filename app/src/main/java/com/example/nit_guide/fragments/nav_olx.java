@@ -1,6 +1,7 @@
 package com.example.nit_guide.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.nit_guide.R;
 import com.example.nit_guide.adapters.AdapterContacts;
@@ -82,10 +84,20 @@ public class nav_olx extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_olx, container, false);
         // 1. get a reference to recyclerView
+        Button sell=(Button)rootView.findViewById(R.id.btn_sell);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_olx);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         adapter=new AdapterOLX(getContext(),olxitemList);
         recyclerView.setAdapter(adapter);
+
+        sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+                myWebLink.setData(Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSf9EPNiTUSyAzoKvaZXQ_1s0o33Yc7scG4Qije9X1eESAKlhA/viewform?usp=sf_link"));
+                startActivity(myWebLink);
+            }
+        });
 
         return rootView;
     }
