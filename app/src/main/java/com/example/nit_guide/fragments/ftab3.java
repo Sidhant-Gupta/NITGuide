@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.example.nit_guide.R;
 
 import java.util.ArrayList;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +30,7 @@ import java.util.ArrayList;
  * Use the {@link ftab3#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ftab3 extends Fragment {
+public class ftab3 extends Fragment implements AdapterContacts.onNoteListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -83,7 +86,7 @@ public class ftab3 extends Fragment {
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactDep);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList);
+        adapter=new AdapterContacts(getContext(),contactList,this);
         recyclerView.setAdapter(adapter);
 
         return rootView;
@@ -135,6 +138,11 @@ public class ftab3 extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        Log.d (TAG, "onNoteClick: Clicked");
     }
 
     /**

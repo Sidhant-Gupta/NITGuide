@@ -13,8 +13,8 @@
         android:padding="16dp">
         
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/dep"
             android:id="@+id/img_contact"
             />
@@ -38,6 +38,15 @@
             android:layout_below="@+id/tv_heading"
             android:layout_marginLeft="10dp"
             android:textSize="13dp" />
+
+<!--        <Button-->
+<!--            android:id="@+id/gotomap"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="70dp"-->
+<!--            android:text="View on Map"/>-->
 
     </RelativeLayout>
 

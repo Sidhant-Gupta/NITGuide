@@ -16,6 +16,7 @@ import com.example.nit_guide.R;
 import com.example.nit_guide.activities.Contacts;
 import com.example.nit_guide.activities.MapsActivity;
 import com.example.nit_guide.activities.branch_paper;
+import com.example.nit_guide.activities.nearby_places;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -101,7 +102,7 @@ public class Home extends Fragment {
         places.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startIntent=new Intent(getActivity(), MapsActivity.class);
+                Intent startIntent=new Intent(getActivity(), nearby_places.class);
                 startActivity(startIntent);
             }
         });
