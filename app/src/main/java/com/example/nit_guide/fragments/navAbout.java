@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.example.nit_guide.models.ModelContacts;
 
 import java.util.ArrayList;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -26,7 +29,7 @@ import java.util.ArrayList;
  * Use the {@link navAbout#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class navAbout extends Fragment {
+public class navAbout extends Fragment implements AdapterContacts.onNoteListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -84,7 +87,7 @@ public class navAbout extends Fragment {
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactUs);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList);
+        adapter=new AdapterContacts(getContext(),contactList,this);
         recyclerView.setAdapter(adapter);
 
         return rootView;
@@ -94,7 +97,7 @@ public class navAbout extends Fragment {
         ArrayList<ModelContacts> holder=new ArrayList<>();
         ModelContacts ob1=new ModelContacts();
         ob1.setHeading("Sejal Gupta");
-        ob1.setSubHeading("CEO & Full Stack Developer");
+        ob1.setSubHeading("Full Stack Developer");
         ob1.setImgName(R.drawable.sejal);
         holder.add(ob1);
 
@@ -130,6 +133,11 @@ public class navAbout extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        Log.d (TAG, "onNoteClick: Clicked");
     }
 
     /**
