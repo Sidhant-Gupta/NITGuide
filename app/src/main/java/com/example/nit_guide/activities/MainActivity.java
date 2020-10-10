@@ -1,13 +1,9 @@
 package com.example.nit_guide.activities;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +20,7 @@ import com.example.nit_guide.fragments.Home;
 import com.example.nit_guide.fragments.NavContactUs;
 import com.example.nit_guide.fragments.navAbout;
 import com.example.nit_guide.fragments.navAcadCalender;
+import com.example.nit_guide.fragments.nav_olx;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -65,12 +62,14 @@ public class MainActivity extends AppCompatActivity   {
                         break;
                     case R.id.nav_notifs:
                         temp =new navAcadCalender();
-                        Intent intent = new Intent(MainActivity.this, Contacts.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(MainActivity.this, Contacts.class);
+//                        startActivity(intent);
                         break;
                     case R.id.nav_contact:
                         temp =new navAbout();
-
+                        break;
+                    case R.id.nav_olx:
+                        temp=new nav_olx();
                         break;
                     default:
                         temp=new Home();
