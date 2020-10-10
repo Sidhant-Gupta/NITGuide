@@ -20,6 +20,7 @@ import com.example.nit_guide.fragments.Home;
 import com.example.nit_guide.fragments.NavContactUs;
 import com.example.nit_guide.fragments.navAbout;
 import com.example.nit_guide.fragments.navAcadCalender;
+import com.example.nit_guide.fragments.nav_feed;
 import com.example.nit_guide.fragments.nav_olx;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,9 +62,7 @@ public class MainActivity extends AppCompatActivity   {
                         temp=new Home();
                         break;
                     case R.id.nav_notifs:
-                        temp =new navAcadCalender();
-//                        Intent intent = new Intent(MainActivity.this, Contacts.class);
-//                        startActivity(intent);
+                        temp =new nav_feed();
                         break;
                     case R.id.nav_contact:
                         temp =new navAbout();
