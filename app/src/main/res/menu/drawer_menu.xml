@@ -25,9 +25,9 @@
             android:icon="@drawable/notif"
             android:title="Notifications"></item>
         <item
-            android:id="@+id/nav_pay"
+            android:id="@+id/nav_olx"
             android:icon="@drawable/pay"
-            android:title="Payments"></item>
+            android:title="OLX"></item>
         <item
             android:id="@+id/nav_nearby"
             android:icon="@drawable/rest"

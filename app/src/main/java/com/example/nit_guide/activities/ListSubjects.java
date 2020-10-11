@@ -34,6 +34,7 @@ public class ListSubjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_subjects);
 
+
         setupToolbar();
         tabLayout = (TabLayout) findViewById(R.id.tabLayoutContact);
         tabitem1 = (TabItem) findViewById((R.id.tab1));
@@ -47,6 +48,7 @@ public class ListSubjects extends AppCompatActivity {
 
         pagerAdapter = new AdapterPaper (getSupportFragmentManager(),tabLayout.getTabCount(),s);
         viewPager.setAdapter(pagerAdapter);
+
 
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

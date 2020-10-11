@@ -15,6 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.nit_guide.R;
+import com.example.nit_guide.fun_spots;
+import org.w3c.dom.Text;
+
 
 public class nearby_places extends AppCompatActivity {
 

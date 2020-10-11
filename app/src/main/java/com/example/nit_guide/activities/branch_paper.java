@@ -134,6 +134,7 @@
 package com.example.nit_guide.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -141,6 +142,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.nit_guide.R;
+
 
 public class branch_paper extends AppCompatActivity{
     //    Toolbar tool;
@@ -158,6 +160,7 @@ public class branch_paper extends AppCompatActivity{
         eceCard = (CardView)findViewById (R.id.sub_ece);
         civilCard = (CardView)findViewById (R.id.sub_civil);
         mechCard = (CardView)findViewById (R.id.sub_mech_pie);
+
 
         onCLick();
 //        computerCard.setOnClickListener (this);
@@ -196,13 +199,6 @@ public class branch_paper extends AppCompatActivity{
         computerCard.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
-//                ArrayList<String> SubjectList = new ArrayList<String>();
-//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
-//                for(int i=0;i<stringArray.length;i++){
-//                    SubjectList.add(stringArray[i]);
-//                }
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
                 comp.putExtra("Subject","Computer");
                 startActivity(comp);
@@ -212,19 +208,11 @@ public class branch_paper extends AppCompatActivity{
         itCard.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
-//                ArrayList<String> SubjectList = new ArrayList<String>();
-//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
-//                for(int i=0;i<stringArray.length;i++){
-//                    SubjectList.add(stringArray[i]);
-//                }
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
                 comp.putExtra("Subject","IT");
                 startActivity(comp);
             }
         });
-
 
         electricalCard.setOnClickListener (new View.OnClickListener() {
             @Override
@@ -247,13 +235,6 @@ public class branch_paper extends AppCompatActivity{
         mechCard.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
-//                ArrayList<String> SubjectList = new ArrayList<String>();
-//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
-//                for(int i=0;i<stringArray.length;i++){
-//                    SubjectList.add(stringArray[i]);
-//                }
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
                 comp.putExtra("Subject","Mechanical");
                 startActivity(comp);
@@ -270,45 +251,4 @@ public class branch_paper extends AppCompatActivity{
             }
         });
     }
-
-//    @Override
-//    public void onClick(View view) {
-//        Intent i;
-//
-//        switch(view.getId ( )){
-//            case R.id.sub_computer:
-//                i = new Intent(getApplicationContext(), ListSubjects.class);
-//                i.putExtra("Subject", "Computer");
-//                startActivity(i);
-//                break;
-//            case R.id.sub_it:
-//                i = new Intent(getApplicationContext(), ListSubjects.class);
-//                i.putExtra("Subject", "I.T.");
-//                startActivity(i);
-//                break;
-//            case R.id.sub_civil:
-//                i = new Intent(getApplicationContext(), ListSubjects.class);
-//                i.putExtra("Subject", "Civil.");
-//                startActivity(i);
-//                break;
-////            case R.id.sub_ece:
-////                i = new Intent(getApplicationContext(), ListSubjects.class);
-////                i.putExtra("Subject", "E.C.E.");
-////                startActivity(i);
-////                break;
-//            case R.id.sub_electrical:
-//                i = new Intent(getApplicationContext(), ListSubjects.class);
-//                i.putExtra("Subject", "Electrical");
-//                startActivity(i);
-//                break;
-//            case R.id.sub_mech_pie:
-//                i = new Intent(getApplicationContext(), ListSubjects.class);
-//                i.putExtra("Subject", "Mech/P.I.E.");
-//                startActivity(i);
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-
 }
