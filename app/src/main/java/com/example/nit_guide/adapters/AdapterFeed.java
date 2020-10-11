@@ -36,8 +36,7 @@ public class AdapterFeed extends RecyclerView.Adapter<ViewHolderFeed> {
         holder.title.setText(data.get(position).getTitle());
         holder.img_poster.setImageResource(data.get(position).getImg_poster());
         holder.writeUp.setText(data.get(position).getWriteUp());
-
-
+        holder.clubName.setText(data.get(position).getClubName());
     }
 
     @Override

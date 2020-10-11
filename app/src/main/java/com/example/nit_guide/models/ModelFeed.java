@@ -2,7 +2,15 @@ package com.example.nit_guide.models;
 
 public class ModelFeed {
     int img_logo,img_poster;
-    private String title,writeUp;
+    private String title,writeUp,clubName;
+
+    public String getClubName() {
+        return clubName;
+    }
+
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
+    }
 
     public int getImg_logo() {
         return img_logo;

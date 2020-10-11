@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    android:elevation="4dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="10dp"
     app:cardUseCompatPadding="true"
     >
     <RelativeLayout
@@ -29,6 +29,16 @@
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
             android:textColor="@color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_club_name"
+            android:text=""
+
+            android:layout_toRightOf="@+id/img_logo"
+            android:layout_below="@id/tv_heading_feed"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -38,7 +48,7 @@
             android:src="@drawable/dep"
             android:id="@+id/img_poster"
             android:layout_below="@id/img_logo"
-            android:layout_margin="10dp"
+            android:layout_marginVertical="10dp"
             />
 
         <TextView

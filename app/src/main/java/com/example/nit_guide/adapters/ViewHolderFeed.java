@@ -11,7 +11,7 @@ import com.example.nit_guide.R;
 
 public class ViewHolderFeed extends RecyclerView.ViewHolder {
     ImageView img_logo,img_poster;
-    TextView title,writeUp;
+    TextView title,writeUp,clubName;
 
     public ViewHolderFeed(@NonNull View itemView) {
         super(itemView);
@@ -19,5 +19,6 @@ public class ViewHolderFeed extends RecyclerView.ViewHolder {
         title=(TextView)itemView.findViewById(R.id.tv_heading_feed);
         img_poster=(ImageView)itemView.findViewById(R.id.img_poster);
         writeUp=(TextView)itemView.findViewById(R.id.tv_writeup);
+        clubName=(TextView)itemView.findViewById(R.id.tv_club_name);
     }
 }
