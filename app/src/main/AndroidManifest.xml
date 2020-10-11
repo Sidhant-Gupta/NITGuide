@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".fun_spots"></activity>
+        <activity android:name=".activities.openPapers_db"></activity>
+        <activity android:name=".activities.fun_spots" />
         <activity android:name=".activities.travelling_places" />
         <activity android:name=".activities.gotoLocation" />
         <activity android:name=".activities.khokha" />
@@ -52,12 +53,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <dist:module dist:instant="true" />

@@ -134,18 +134,13 @@
 package com.example.nit_guide.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.nit_guide.R;
-
-import java.util.ArrayList;
 
 public class branch_paper extends AppCompatActivity{
     //    Toolbar tool;
@@ -164,20 +159,103 @@ public class branch_paper extends AppCompatActivity{
         civilCard = (CardView)findViewById (R.id.sub_civil);
         mechCard = (CardView)findViewById (R.id.sub_mech_pie);
 
+        onCLick();
 //        computerCard.setOnClickListener (this);
 //        itCard.setOnClickListener (this);
 //        electricalCard.setOnClickListener (this);
 //        civilCard.setOnClickListener (this);
+//        mechCard.setOnClickListener (new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
+////                ArrayList<String> SubjectList = new ArrayList<String>();
+////                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+////                for(int i=0;i<stringArray.length;i++){
+////                    SubjectList.add(stringArray[i]);
+////                }
+//                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+//                comp.putExtra("Subject","Mechanical");
+//                startActivity(comp);
+//            }
+//        });
+//
+//        eceCard.setOnClickListener (new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+//                comp.putExtra("Subject","E.C.E.");
+//                startActivity(comp);
+//            }
+//        });
+
+    }
+
+    private void onCLick() {
+        computerCard.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
+//                ArrayList<String> SubjectList = new ArrayList<String>();
+//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+//                for(int i=0;i<stringArray.length;i++){
+//                    SubjectList.add(stringArray[i]);
+//                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("Subject","Computer");
+                startActivity(comp);
+            }
+        });
+
+        itCard.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
+//                ArrayList<String> SubjectList = new ArrayList<String>();
+//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+//                for(int i=0;i<stringArray.length;i++){
+//                    SubjectList.add(stringArray[i]);
+//                }
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("Subject","IT");
+                startActivity(comp);
+            }
+        });
+
+
+        electricalCard.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("Subject","Electrical");
+                startActivity(comp);
+            }
+        });
+
+        civilCard.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
+                comp.putExtra("Subject","Civil");
+                startActivity(comp);
+            }
+        });
         mechCard.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<String> SubjectList = new ArrayList<String>();
-                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
-                for(int i=0;i<stringArray.length;i++){
-                    SubjectList.add(stringArray[i]);
-                }
+
+////                Toast.makeText (view.getContext (), "what did i just get selected?", Toast.LENGTH_SHORT).show ( );
+//                ArrayList<String> SubjectList = new ArrayList<String>();
+//                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
+//                for(int i=0;i<stringArray.length;i++){
+//                    SubjectList.add(stringArray[i]);
+//                }
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
-                comp.putExtra("String Array",SubjectList);
+                comp.putExtra("Subject","Mechanical");
                 startActivity(comp);
             }
         });
@@ -185,17 +263,12 @@ public class branch_paper extends AppCompatActivity{
         eceCard.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<String> SubjectList = new ArrayList<String>();
-                String[] stringArray={"OOPs in C++","C","Java","Automata","Web Development","Software Eng.","Unix/Linux","O.S.","Data Mining"};
-                for(int i=0;i<stringArray.length;i++){
-                    SubjectList.add(stringArray[i]);
-                }
+
                 Intent comp=new Intent(getApplicationContext(),ListSubjects.class);
-                comp.putExtra("String Array",SubjectList);
+                comp.putExtra("Subject","ECE");
                 startActivity(comp);
             }
         });
-
     }
 
 //    @Override

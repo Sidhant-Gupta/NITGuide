@@ -1,4 +1,4 @@
-package com.example.nit_guide;
+package com.example.nit_guide.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.nit_guide.R;
 import com.example.nit_guide.activities.gotoLocation;
 import com.example.nit_guide.adapters.AdapterContacts;
 import com.example.nit_guide.models.ModelContacts;
