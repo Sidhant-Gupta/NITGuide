@@ -104,6 +104,7 @@ public class nav_feed extends Fragment {
                 "ELAD");
         ob1.setImg_logo(R.drawable.logo2);
         ob1.setImg_poster(R.drawable.poster2);
+        ob1.setClubName("ELAD");
         holder.add(ob1);
 
         ModelFeed ob2=new ModelFeed();
@@ -132,6 +133,7 @@ public class nav_feed extends Fragment {
                 "Poster - Paras Bansal");
         ob2.setImg_logo(R.drawable.logo1);
         ob2.setImg_poster(R.drawable.poster1);
+        ob2.setClubName("Spicmacay");
         holder.add(ob2);
 
         return holder;
