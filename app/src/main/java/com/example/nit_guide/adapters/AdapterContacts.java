@@ -17,12 +17,14 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
 
     ArrayList<ModelContacts>data;
     LayoutInflater inflater;
+    String fragment;
 
     private onNoteListener monNoteListener;
-    public AdapterContacts(Context context, ArrayList<ModelContacts> data, onNoteListener onNoteListener) {
+    public AdapterContacts(Context context, ArrayList<ModelContacts> data, onNoteListener onNoteListener,String fragment) {
         this.inflater = LayoutInflater.from(context);
         this.data = data;
         this.monNoteListener = onNoteListener;
+        this.fragment=fragment;
     }
 
 
@@ -31,7 +33,7 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
     public ViewHolderContact onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.single_row_contact,parent,false);
-        return new ViewHolderContact(view,monNoteListener);
+        return new ViewHolderContact(view,monNoteListener,fragment);
     }
 
     @Override

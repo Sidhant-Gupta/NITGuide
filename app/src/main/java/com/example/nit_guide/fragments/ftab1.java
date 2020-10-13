@@ -89,7 +89,7 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactDep);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList,this);
+        adapter=new AdapterContacts(getContext(),contactList,this,"departments");
         recyclerView.setAdapter(adapter);
 
         return rootView;
@@ -104,22 +104,24 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
         holder.add(ob1);
 
         ModelContacts ob2=new ModelContacts();
-        ob2.setHeading("Electrical Department");
-        ob2.setSubHeading("Faculty members of EE Department");
+        ob2.setHeading("ECE Department");
+        ob2.setSubHeading("Faculty members of ECE Department");
         ob2.setImgName(R.drawable.dep);
         holder.add(ob2);
 
         ModelContacts ob3=new ModelContacts();
-        ob3.setHeading("Mechanical Department");
-        ob3.setSubHeading("Faculty members of ME Department");
+        ob3.setHeading("Electrical Department");
+        ob3.setSubHeading("Faculty members of EE Department");
         ob3.setImgName(R.drawable.dep);
         holder.add(ob3);
 
         ModelContacts ob4=new ModelContacts();
-        ob4.setHeading("Civil Department");
-        ob4.setSubHeading("Faculty members of CE Department");
+        ob4.setHeading("Mechanical Department");
+        ob4.setSubHeading("Faculty members of ME Department");
         ob4.setImgName(R.drawable.dep);
         holder.add(ob4);
+
+
         return holder;
 
     }

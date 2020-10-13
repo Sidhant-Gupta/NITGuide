@@ -47,7 +47,7 @@ public class Restaurants extends AppCompatActivity implements AdapterContacts.on
         restList = dataqueue ( );
         recyclerView = (RecyclerView) findViewById (R.id.rv_contactDep);
         recyclerView.setLayoutManager (new LinearLayoutManager (this));
-        adapter = new AdapterContacts (this, restList, this);
+        adapter = new AdapterContacts (this, restList, this,"restaurants");
         recyclerView.setAdapter (adapter);
 //        recyclerView.setOnClickListener (new AdapterView<AdapterContacts>.OnItemClickListener (){
 
