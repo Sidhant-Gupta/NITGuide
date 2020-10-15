@@ -28,7 +28,7 @@ public class fun_spots extends AppCompatActivity implements AdapterContacts.onNo
             restList = dataqueue ( );
             recyclerView = (RecyclerView) findViewById (R.id.rv_contactDep);
             recyclerView.setLayoutManager (new LinearLayoutManager (this));
-            adapter = new AdapterContacts (this, restList, this,"fun_spots");
+            adapter = new AdapterContacts (this, restList, this);
             recyclerView.setAdapter (adapter);
 
         }

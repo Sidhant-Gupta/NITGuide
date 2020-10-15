@@ -17,14 +17,12 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
 
     ArrayList<ModelContacts>data;
     LayoutInflater inflater;
-    String fragment;
 
     private onNoteListener monNoteListener;
-    public AdapterContacts(Context context, ArrayList<ModelContacts> data, onNoteListener onNoteListener,String fragment) {
+    public AdapterContacts(Context context, ArrayList<ModelContacts> data, onNoteListener onNoteListener) {
         this.inflater = LayoutInflater.from(context);
         this.data = data;
         this.monNoteListener = onNoteListener;
-        this.fragment=fragment;
     }
 
 
@@ -33,7 +31,7 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
     public ViewHolderContact onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.single_row_contact,parent,false);
-        return new ViewHolderContact(view,monNoteListener,fragment);
+        return new ViewHolderContact(view,monNoteListener);
     }
 
     @Override
@@ -41,14 +39,7 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
         holder.tvHeading.setText(data.get(position).getHeading());
         holder.tvSubHeading.setText(data.get(position).getSubHeading());
         holder.img.setImageResource(data.get(position).getImgName());
-//        holder.btn.setOnClickListener (new View.OnClickListener (){
-//
-//            @Override
-//            public void onClick(View view) {
-//                String t = data.get(position).getHeading();
-//                Toast.makeText (Context, t, Toast.LENGTH_SHORT).show ( );
-//            }
-//        });
+
     }
 
     @Override

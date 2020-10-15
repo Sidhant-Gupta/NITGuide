@@ -86,7 +86,7 @@ public class ftab3 extends Fragment implements AdapterContacts.onNoteListener {
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactDep);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList,this,"emergency");
+        adapter=new AdapterContacts(getContext(),contactList,this);
         recyclerView.setAdapter(adapter);
 
         return rootView;

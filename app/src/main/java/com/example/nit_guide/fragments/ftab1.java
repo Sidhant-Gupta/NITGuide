@@ -1,6 +1,7 @@
 package com.example.nit_guide.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nit_guide.activities.contact_list;
 import com.example.nit_guide.adapters.AdapterContacts;
 import com.example.nit_guide.models.ModelContacts;
 import com.example.nit_guide.R;
@@ -89,7 +91,7 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactDep);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList,this,"departments");
+        adapter=new AdapterContacts(getContext(),contactList,this);
         recyclerView.setAdapter(adapter);
 
         return rootView;
@@ -152,7 +154,31 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
 
     @Override
     public void onNoteClick(int position) {
+
         Log.d (TAG, "onNoteClick: Clicked");
+        Intent intent = new Intent(getContext(), contact_list.class);
+        ArrayList<String> intentMsg = new ArrayList<>();
+        intentMsg.clear();
+        switch (position) {
+            case 0:
+                intentMsg.add("CSE");
+                break;
+            case 1:
+                intentMsg.add("ECE");
+                break;
+            case 2:
+                intentMsg.add("Electrical");
+                break;
+            case 3:
+                intentMsg.add("CSE");
+                break;
+            default:
+                intentMsg.add("CSE");
+                break;
+        }
+        intentMsg.add("Department");
+        intent.putExtra("select",intentMsg);
+        startActivity(intent);
     }
 
     /**

@@ -87,7 +87,7 @@ public class navAbout extends Fragment implements AdapterContacts.onNoteListener
         // 1. get a reference to recyclerView
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_contactUs);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new AdapterContacts(getContext(),contactList,this,"about");
+        adapter=new AdapterContacts(getContext(),contactList,this);
         recyclerView.setAdapter(adapter);
 
         return rootView;

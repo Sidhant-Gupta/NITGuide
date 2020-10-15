@@ -40,7 +40,7 @@ public class khokha extends AppCompatActivity implements AdapterContacts.onNoteL
         restList = dataqueue ( );
         recyclerView = (RecyclerView) findViewById (R.id.rv_contactDep);
         recyclerView.setLayoutManager (new LinearLayoutManager (this));
-        adapter = new AdapterContacts (this, restList, this,"khokha");
+        adapter = new AdapterContacts (this, restList, this);
         recyclerView.setAdapter (adapter);
 
     }
