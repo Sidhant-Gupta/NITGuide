@@ -7,14 +7,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.nit_guide.adapters.PageAdapter;
 import com.example.nit_guide.R;
+import com.example.nit_guide.adapters.PageAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-public class Contacts extends AppCompatActivity{
+public class timetable_open extends AppCompatActivity {
+
     TabLayout tabLayout;
-    TabItem tabitem1,tabitem2,tabitem3;
+    TabItem tabitem1,tabitem2,tabitem3,tabitem4,tabitem5;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
     Toolbar toolbar;
@@ -22,16 +23,19 @@ public class Contacts extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts);
-
+        setContentView(R.layout.activity_timetable_open);
         setUpToolbar();
         tabLayout = (TabLayout) findViewById(R.id.tabLayoutContact);
-        tabitem1 = (TabItem) findViewById((R.id.tab1));
-        tabitem2 = (TabItem) findViewById(R.id.tab2);
-        tabitem2 = (TabItem) findViewById(R.id.tab3);
+        tabitem1 = (TabItem) findViewById((R.id.mon));
+        tabitem2 = (TabItem) findViewById(R.id.tue);
+        tabitem3 = (TabItem) findViewById(R.id.wed);
+        tabitem4 = (TabItem) findViewById(R.id.thur);
+        tabitem5 = (TabItem) findViewById(R.id.fri);
         viewPager = (ViewPager) findViewById(R.id.vpager);
 
-        pagerAdapter = new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),"Contacts");
+        pagerAdapter = new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),"timetable");
+        viewPager.setAdapter(pagerAdapter);
+
         viewPager.setAdapter(pagerAdapter);
 
 
@@ -40,7 +44,7 @@ public class Contacts extends AppCompatActivity{
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
 
-                if (tab.getPosition() == 0 || tab.getPosition() == 1 || tab.getPosition() == 2) {
+                if (tab.getPosition() == 0 || tab.getPosition() == 1 || tab.getPosition() == 2 || tab.getPosition() == 3 || tab.getPosition() == 4) {
                     pagerAdapter.notifyDataSetChanged();
                 }
 
@@ -56,14 +60,10 @@ public class Contacts extends AppCompatActivity{
 
             }
         });
-
-        // listen for scroll or page change
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
-
     private void setUpToolbar(){
         toolbar=(Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Phone Book");
+        toolbar.setTitle("Time Table");
         setSupportActionBar(toolbar);
     }
 }

@@ -187,7 +187,7 @@ public class timetable extends AppCompatActivity{
                     BranchYear.add("4");
                 BranchYear.add(day[0]);
                 BranchYear.add(section[0]);
-                Intent comp=new Intent(getApplicationContext(), View_TimeTable.class);
+                Intent comp=new Intent(getApplicationContext(), timetable_open.class);
                 comp.putStringArrayListExtra ("Branch, Year, Day and Section", BranchYear);
                 startActivity(comp);
             }
