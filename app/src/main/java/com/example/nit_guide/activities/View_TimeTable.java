@@ -94,18 +94,18 @@ public class View_TimeTable extends AppCompatActivity {
         final String day = SubjectList.get (2);
         final String section = SubjectList.get (3);
         Log.e ("year", year);
-        System.out.println (branch);
-        System.out.print (year);
-        System.out.print (day);
+        System.out.println ("branch"+branch);
+        System.out.println (year+"year");
+        System.out.println (day+"day");
         final DataSnapshot snapshot = null;
 
 
-        DatabaseReference reff = FirebaseDatabase.getInstance ( ).getReference ( "nit-guide/data/TimeTable").child(branch).child(year).child(section).child(day);
+        DatabaseReference reff = FirebaseDatabase.getInstance ( ).getReference ().child("TimeTable").child(branch).child(year).child(section).child(day);
         reff.addValueEventListener (new ValueEventListener ( ) {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                period[0][0] = snapshot.child("P1").getValue (String.class);
+                System.out.println("test"+snapshot.child("P1"));
+                period[0][0] = snapshot.child("P1").getValue(String.class);
                 period[0][1] = snapshot.child("P2").getValue (String.class);
                 period[0][2] = snapshot.child("P3").getValue (String.class);
 
@@ -130,7 +130,7 @@ public class View_TimeTable extends AppCompatActivity {
                 room[2][1] = snapshot.child("room8").getValue (String.class);
                 room[2][2] = snapshot.child("room9").getValue (String.class);
 
-                System.out.println(" "+room[0][0]);
+                System.out.println(" "+period[0][0]);
 //                period1.setText (p1);
 //                period2.setText (p2);
 //                period3.setText (p3);
@@ -211,35 +211,36 @@ public class View_TimeTable extends AppCompatActivity {
             subject = (TextView) view.findViewById (R.id.subject1);
             fromtime = (TextView) view.findViewById (R.id.fromtime);
             totime = (TextView)view.findViewById (R.id.totime);
-
+//
             roomno.setText(roomarray[i][0]);
             subject.setText (subjectarray[i][0]);
             fromtime.setText (from[i][0]);
             totime.setText (to[i][0]);
-
-
-            //second
-            roomno2 = (TextView)view.findViewById (R.id.room2);
-            subject2 = (TextView) view.findViewById (R.id.subject2);
-            fromtime2 = (TextView) view.findViewById (R.id.fromtime2);
-            totime2 = (TextView)view.findViewById (R.id.totime2);
-
-            roomno2.setText(roomarray[i][1]);
-            subject2.setText (subjectarray[i][1]);
-            fromtime2.setText (from[i][1]);
-            totime2.setText (to[i][1]);
-
-
-            //third
-            roomno3 = (TextView)view.findViewById (R.id.room3);
-            subject3 = (TextView) view.findViewById (R.id.subject3);
-            fromtime3 = (TextView) view.findViewById (R.id.fromtime3);
-            totime3 = (TextView)view.findViewById (R.id.totime3);
-
-            roomno3.setText(roomarray[i][2]);
-            subject3.setText (subjectarray[i][2]);
-            fromtime3.setText (from[i][2]);
-            totime3.setText (to[i][2]);
+            System.out.println(" blalalajajanan"+subjectarray[0][0]);
+//
+//
+//            //second
+//            roomno2 = (TextView)view.findViewById (R.id.room2);
+//            subject2 = (TextView) view.findViewById (R.id.subject2);
+//            fromtime2 = (TextView) view.findViewById (R.id.fromtime2);
+//            totime2 = (TextView)view.findViewById (R.id.totime2);
+//
+//            roomno2.setText(roomarray[i][1]);
+//            subject2.setText (subjectarray[i][1]);
+//            fromtime2.setText (from[i][1]);
+//            totime2.setText (to[i][1]);
+//
+//
+//            //third
+//            roomno3 = (TextView)view.findViewById (R.id.room3);
+//            subject3 = (TextView) view.findViewById (R.id.subject3);
+//            fromtime3 = (TextView) view.findViewById (R.id.fromtime3);
+//            totime3 = (TextView)view.findViewById (R.id.totime3);
+//
+//            roomno3.setText(roomarray[i][2]);
+//            subject3.setText (subjectarray[i][2]);
+//            fromtime3.setText (from[i][2]);
+//            totime3.setText (to[i][2]);
 
 
             return view;
