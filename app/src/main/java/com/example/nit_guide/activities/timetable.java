@@ -26,7 +26,7 @@ public class timetable extends AppCompatActivity{
         List<String> list =new ArrayList<String> ();
         list.add("Select branch");
         list.add("ME");
-        list.add("CSE");
+        list.add("CS");
         list.add("ECE");
         list.add("EEE");
         list.add("CE");

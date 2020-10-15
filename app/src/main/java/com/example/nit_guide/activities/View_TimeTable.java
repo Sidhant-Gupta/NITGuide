@@ -62,32 +62,32 @@ public class View_TimeTable extends AppCompatActivity {
 //        totime[6] = "to 3:35 p.m.";
 //        totime[7] = "to 4:30 p.m.";
 
-        //remove these
-//        String[] first = new String[]{};
-        period[0][0] = "ef";
-        period[0][1] = "9:25 a.m.";
-        period[0][2] = "Break";
-
-        period[1][0] = "11:35 a.m.";
-        period[1][1] = "12:30 p.m.";
-        period[1][2] = "1:25 p.m.";
-
-        period[2][0] = "2:40 p.m.";
-        period[2][1] = "3:35 p.m.";
-        period[2][2] = "3:35 p.m.";
 
 
-        room[0][0] = "to 9:25 a.m.";
-        room[0][1] = "to 10:20 a.m.";
-        room[0][2] = "to 11:35 a.m.";
-
-        room[1][0] = "to 12:30 p.m.";
-        room[1][1] = "to 1:25 p.m.";
-        room[1][2] = "to 2:40 p.m.";
-
-        room[2][0] = "to 3:35 p.m.";
-        room[2][1] = "to 4:30 p.m.";
-        room[2][2] = "khatam";
+//        period[0][0] = "ef";
+//        period[0][1] = "9:25 a.m.";
+//        period[0][2] = "Break";
+//
+//        period[1][0] = "11:35 a.m.";
+//        period[1][1] = "12:30 p.m.";
+//        period[1][2] = "1:25 p.m.";
+//
+//        period[2][0] = "2:40 p.m.";
+//        period[2][1] = "3:35 p.m.";
+//        period[2][2] = "3:35 p.m.";
+//
+//
+//        room[0][0] = "to 9:25 a.m.";
+//        room[0][1] = "to 10:20 a.m.";
+//        room[0][2] = "to 11:35 a.m.";
+//
+//        room[1][0] = "to 12:30 p.m.";
+//        room[1][1] = "to 1:25 p.m.";
+//        room[1][2] = "to 2:40 p.m.";
+//
+//        room[2][0] = "to 3:35 p.m.";
+//        room[2][1] = "to 4:30 p.m.";
+//        room[2][2] = "khatam";
 
         final String branch = SubjectList.get (0);
         final String year = SubjectList.get (1);
@@ -98,44 +98,39 @@ public class View_TimeTable extends AppCompatActivity {
         System.out.print (year);
         System.out.print (day);
         final DataSnapshot snapshot = null;
-//
-//        present = findViewById (R.id.day);
-//        present.setText (day);
-//        period1 = findViewById (R.id.period1);
-//        period2 = findViewById (R.id.period2);
-//        period3 = findViewById (R.id.period3);
-//        period4 = findViewById (R.id.period4);
-//        period5 = findViewById (R.id.period5);
-//        period6 = findViewById (R.id.period6);
-//        period7 = findViewById (R.id.period7);
-//        period8 = findViewById (R.id.period8);
-//
-//
-//        DatabaseReference reff = FirebaseDatabase.getInstance ( ).getReference ( "nit-guide/TimeTable");
-//
-//        reff.addValueEventListener (new ValueEventListener ( ) {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                period[0] = (String) snapshot.child(branch).child(year).child(section).child(day).child("P1").getValue ();
-//                period[1] = snapshot.child(branch).child(year).child(section).child(day).child("P2").getValue (String.class);
-//                period[2] = snapshot.child(branch).child(year).child(section).child(day).child("P3").getValue (String.class);
-//                period[3] = snapshot.child(branch).child(year).child(section).child(day).child("P4").getValue (String.class);
-//                period[4] = snapshot.child(branch).child(year).child(section).child(day).child("P5").getValue (String.class);
-//                period[5] = snapshot.child(branch).child(year).child(section).child(day).child("P6").getValue (String.class);
-//                period[6] = snapshot.child(branch).child(year).child(section).child(day).child("P7").getValue (String.class);
-//                period[7] = snapshot.child(branch).child(year).child(section).child(day).child("P8").getValue (String.class);
+
+
+        DatabaseReference reff = FirebaseDatabase.getInstance ( ).getReference ( "nit-guide/data/TimeTable").child(branch).child(year).child(section).child(day);
+        reff.addValueEventListener (new ValueEventListener ( ) {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                period[0][0] = snapshot.child("P1").getValue (String.class);
+                period[0][1] = snapshot.child("P2").getValue (String.class);
+                period[0][2] = snapshot.child("P3").getValue (String.class);
+
+                period[1][0] = snapshot.child("P4").getValue (String.class);
+                period[1][1] = snapshot.child("P5").getValue (String.class);
+                period[1][2] = snapshot.child("P6").getValue (String.class);
+
+                period[2][0] = snapshot.child("P7").getValue (String.class);
+                period[2][1] = snapshot.child("P8").getValue (String.class);
+                period[2][2] = snapshot.child("P9").getValue (String.class);
 //
 //
-//
-//                room[0] = (String) snapshot.child(branch).child(year).child(section).child(day).child("room1").getValue ();
-//                room[1] = snapshot.child(branch).child(year).child(section).child(day).child("room2").getValue (String.class);
-//                room[2] = snapshot.child(branch).child(year).child(section).child(day).child("room3").getValue (String.class);
-//                room[3] = snapshot.child(branch).child(year).child(section).child(day).child("room4").getValue (String.class);
-//                room[4] = snapshot.child(branch).child(year).child(section).child(day).child("room5").getValue (String.class);
-//                room[5] = snapshot.child(branch).child(year).child(section).child(day).child("room6").getValue (String.class);
-//                room[6] = snapshot.child(branch).child(year).child(section).child(day).child("room7").getValue (String.class);
-//                room[7] = snapshot.child(branch).child(year).child(section).child(day).child("room8").getValue (String.class);
-//                System.out.println(p8);
+                room[0][0] = (String) snapshot.child("room1").getValue ();
+                room[0][1] = snapshot.child("room2").getValue (String.class);
+                room[0][2] = snapshot.child("room3").getValue (String.class);
+
+                room[1][0] = snapshot.child("room4").getValue (String.class);
+                room[1][1] = snapshot.child("room5").getValue (String.class);
+                room[1][2] = snapshot.child("room6").getValue (String.class);
+
+                room[2][0] = snapshot.child("room7").getValue (String.class);
+                room[2][1] = snapshot.child("room8").getValue (String.class);
+                room[2][2] = snapshot.child("room9").getValue (String.class);
+
+                System.out.println(" "+room[0][0]);
 //                period1.setText (p1);
 //                period2.setText (p2);
 //                period3.setText (p3);
@@ -144,18 +139,18 @@ public class View_TimeTable extends AppCompatActivity {
 //                period6.setText (p6);
 //                period7.setText (p7);
 //                period8.setText (p8);
-//            }
-//
-//    }
+            }
 
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
 //
-//            }
-//        });
+    });
+
+
 
         setupUIView ( );
-
         setUpToolbar();
 
         SimpleAdapter simpleAdapter = new SimpleAdapter (this, period, room, fromtime, totime);
