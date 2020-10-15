@@ -33,6 +33,14 @@ public class View_TimeTable extends AppCompatActivity {
     private Toolbar toolbar;
     private ListView listview;
 
+    interface DataReceivedListener{
+        void onDataReceived(String[][] subjectA, String[][] roomA);
+    }
+
+    void onDataReceived(String[][] period, String[][] room,String[][] fromtime, String[][] totime){
+        SimpleAdapter simpleAdapter = new SimpleAdapter (this, period, room, fromtime, totime);
+        listview.setAdapter (simpleAdapter);
+    }
     //TextView present, period1, period2, period3, period4, period5, period6, period7, period8;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,6 +139,7 @@ public class View_TimeTable extends AppCompatActivity {
                 room[2][2] = snapshot.child("room9").getValue (String.class);
 
                 System.out.println(" "+period[0][0]);
+                onDataReceived(period,room,totime,fromtime);
 //                period1.setText (p1);
 //                period2.setText (p2);
 //                period3.setText (p3);
@@ -219,28 +228,28 @@ public class View_TimeTable extends AppCompatActivity {
             System.out.println(" blalalajajanan"+subjectarray[0][0]);
 //
 //
-//            //second
-//            roomno2 = (TextView)view.findViewById (R.id.room2);
-//            subject2 = (TextView) view.findViewById (R.id.subject2);
-//            fromtime2 = (TextView) view.findViewById (R.id.fromtime2);
-//            totime2 = (TextView)view.findViewById (R.id.totime2);
-//
-//            roomno2.setText(roomarray[i][1]);
-//            subject2.setText (subjectarray[i][1]);
-//            fromtime2.setText (from[i][1]);
-//            totime2.setText (to[i][1]);
-//
-//
-//            //third
-//            roomno3 = (TextView)view.findViewById (R.id.room3);
-//            subject3 = (TextView) view.findViewById (R.id.subject3);
-//            fromtime3 = (TextView) view.findViewById (R.id.fromtime3);
-//            totime3 = (TextView)view.findViewById (R.id.totime3);
-//
-//            roomno3.setText(roomarray[i][2]);
-//            subject3.setText (subjectarray[i][2]);
-//            fromtime3.setText (from[i][2]);
-//            totime3.setText (to[i][2]);
+            //second
+            roomno2 = (TextView)view.findViewById (R.id.room2);
+            subject2 = (TextView) view.findViewById (R.id.subject2);
+            fromtime2 = (TextView) view.findViewById (R.id.fromtime2);
+            totime2 = (TextView)view.findViewById (R.id.totime2);
+
+            roomno2.setText(roomarray[i][1]);
+            subject2.setText (subjectarray[i][1]);
+            fromtime2.setText (from[i][1]);
+            totime2.setText (to[i][1]);
+
+
+            //third
+            roomno3 = (TextView)view.findViewById (R.id.room3);
+            subject3 = (TextView) view.findViewById (R.id.subject3);
+            fromtime3 = (TextView) view.findViewById (R.id.fromtime3);
+            totime3 = (TextView)view.findViewById (R.id.totime3);
+
+            roomno3.setText(roomarray[i][2]);
+            subject3.setText (subjectarray[i][2]);
+            fromtime3.setText (from[i][2]);
+            totime3.setText (to[i][2]);
 
 
             return view;
@@ -248,5 +257,6 @@ public class View_TimeTable extends AppCompatActivity {
 
         }
     }
+
 
 }

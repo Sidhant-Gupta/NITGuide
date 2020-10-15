@@ -86,7 +86,7 @@ public class nav_olx extends Fragment {
         // 1. get a reference to recyclerView
         Button sell=(Button)rootView.findViewById(R.id.btn_sell);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_olx);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter=new AdapterOLX(getContext(),olxitemList);
         recyclerView.setAdapter(adapter);
 

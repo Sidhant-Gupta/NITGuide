@@ -1,6 +1,7 @@
 package com.example.nit_guide.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nit_guide.activities.contact_list;
 import com.example.nit_guide.adapters.AdapterContacts;
 import com.example.nit_guide.models.ModelContacts;
 import com.example.nit_guide.R;
@@ -104,22 +106,24 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
         holder.add(ob1);
 
         ModelContacts ob2=new ModelContacts();
-        ob2.setHeading("Electrical Department");
-        ob2.setSubHeading("Faculty members of EE Department");
+        ob2.setHeading("ECE Department");
+        ob2.setSubHeading("Faculty members of ECE Department");
         ob2.setImgName(R.drawable.dep);
         holder.add(ob2);
 
         ModelContacts ob3=new ModelContacts();
-        ob3.setHeading("Mechanical Department");
-        ob3.setSubHeading("Faculty members of ME Department");
+        ob3.setHeading("Electrical Department");
+        ob3.setSubHeading("Faculty members of EE Department");
         ob3.setImgName(R.drawable.dep);
         holder.add(ob3);
 
         ModelContacts ob4=new ModelContacts();
-        ob4.setHeading("Civil Department");
-        ob4.setSubHeading("Faculty members of CE Department");
+        ob4.setHeading("Mechanical Department");
+        ob4.setSubHeading("Faculty members of ME Department");
         ob4.setImgName(R.drawable.dep);
         holder.add(ob4);
+
+
         return holder;
 
     }
@@ -150,7 +154,31 @@ public class ftab1 extends Fragment implements AdapterContacts.onNoteListener {
 
     @Override
     public void onNoteClick(int position) {
+
         Log.d (TAG, "onNoteClick: Clicked");
+        Intent intent = new Intent(getContext(), contact_list.class);
+        ArrayList<String> intentMsg = new ArrayList<>();
+        intentMsg.clear();
+        switch (position) {
+            case 0:
+                intentMsg.add("CSE");
+                break;
+            case 1:
+                intentMsg.add("ECE");
+                break;
+            case 2:
+                intentMsg.add("Electrical");
+                break;
+            case 3:
+                intentMsg.add("CSE");
+                break;
+            default:
+                intentMsg.add("CSE");
+                break;
+        }
+        intentMsg.add("Department");
+        intent.putExtra("select",intentMsg);
+        startActivity(intent);
     }
 
     /**

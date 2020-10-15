@@ -39,14 +39,7 @@ public class AdapterContacts extends RecyclerView.Adapter<ViewHolderContact> {
         holder.tvHeading.setText(data.get(position).getHeading());
         holder.tvSubHeading.setText(data.get(position).getSubHeading());
         holder.img.setImageResource(data.get(position).getImgName());
-//        holder.btn.setOnClickListener (new View.OnClickListener (){
-//
-//            @Override
-//            public void onClick(View view) {
-//                String t = data.get(position).getHeading();
-//                Toast.makeText (Context, t, Toast.LENGTH_SHORT).show ( );
-//            }
-//        });
+
     }
 
     @Override
