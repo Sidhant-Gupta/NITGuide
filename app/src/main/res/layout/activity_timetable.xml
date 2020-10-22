@@ -66,26 +66,6 @@
             android:layout_below="@id/section"
             android:layout_margin="10dp"/>
 
-        <!--<TextView-->
-            <!--android:id="@+id/day"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="31dp"-->
-            <!--android:layout_marginStart="8dp"-->
-            <!--android:layout_marginLeft="8dp"-->
-            <!--android:text="Select Day"-->
-            <!--android:textColor="@color/common_google_signin_btn_text_dark_focused"-->
-            <!--android:textSize="20sp"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/view"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintHorizontal_bias="1.0"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/section"-->
-            <!--app:layout_constraintVertical_bias="0.353" />-->
-    <!--<Spinner-->
-        <!--android:id="@+id/day_spin"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="10dp" />-->
 
         <Button
             android:id="@+id/view"
@@ -101,19 +81,5 @@
 
 
 
-    <!--<androidx.appcompat.widget.Toolbar-->
-        <!--android:id="@+id/my_toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="45dp"-->
-        <!--android:background="@android:color/holo_blue_dark"-->
-        <!--android:elevation="4dp"-->
-        <!--android:theme="@style/Widget.AppCompat.ActionBar"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/branch"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-        <!--app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"-->
-        <!--app:titleTextColor="@color/common_google_signin_btn_text_dark_default" />-->
 
 </RelativeLayout>

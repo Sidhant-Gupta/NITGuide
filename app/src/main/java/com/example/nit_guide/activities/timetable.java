@@ -72,21 +72,7 @@ public class timetable extends AppCompatActivity{
         section_spin.setAdapter (adapter);
 
     }
-//    public void addItemDaySpinner(){
-//        day_spin= (Spinner)findViewById (R.id.day_spin);
-//        List<String> list = new ArrayList<> ();
-//        list.add("Select Day");
-//        list.add ("Monday");
-//        list.add ("Tuesday");
-//        list.add ("Wednesday");
-//        list.add ("Thursday");
-//        list.add ("Friday");
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,list);
-//        adapter.setDropDownViewResource (android.R.layout.simple_spinner_dropdown_item);
-//        day_spin.setAdapter (adapter);
-//
-//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -97,76 +83,40 @@ public class timetable extends AppCompatActivity{
         addItemBranchSpinner ();
         addItemYearSpinner ();
         addItemSectionSpinner ();
-//        addItemDaySpinner ();
+
         final String[] branch = new String[1];
         final String[] year = new String[1];
         final String[] section = new String[1];
-//        final String[] day = new String[1];
 
         branch_spin.setOnItemSelectedListener (new AdapterView.OnItemSelectedListener (){
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 branch[0] = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                //Toast.makeText(adapterView.getContext(), "Selected: " + branch[0], Toast.LENGTH_LONG).show();
                 }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-
-
+            public void onNothingSelected(AdapterView<?> adapterView) { }
         });
+
         year_spin.setOnItemSelectedListener (new AdapterView.OnItemSelectedListener (){
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 year[0] =  adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                //Toast.makeText(adapterView.getContext(), "Selected: " + year[0], Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-
-
+            public void onNothingSelected(AdapterView<?> adapterView) { }
         });
+
         section_spin.setOnItemSelectedListener (new AdapterView.OnItemSelectedListener (){
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 section[0] = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                //Toast.makeText(adapterView.getContext(), "Selected: " + section[0], Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-
-
+            public void onNothingSelected(AdapterView<?> adapterView) { }
         });
-//        day_spin.setOnItemSelectedListener (new AdapterView.OnItemSelectedListener (){
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                day[0] =  adapterView.getItemAtPosition(i).toString();
-//
-//                // Showing selected spinner item
-//                //Toast.makeText(adapterView.getContext(), "Selected: " + day[0], Toast.LENGTH_LONG).show();
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//
-//
-//        });
 
         viewtt = (Button)findViewById (R.id.view);
         viewtt.setOnClickListener (new View.OnClickListener ( ) {
