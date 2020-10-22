@@ -52,7 +52,6 @@
         <activity android:name=".activities.profile" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.timetable" />
-        <activity android:name=".activities.View_TimeTable" />
         <activity android:name=".activities.register" />
         <activity android:name=".activities.papers" />
         <activity android:name=".activities.login_activity">

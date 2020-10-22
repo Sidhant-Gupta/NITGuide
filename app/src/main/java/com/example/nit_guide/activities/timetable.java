@@ -21,12 +21,14 @@ public class timetable extends AppCompatActivity{
     private Spinner branch_spin, year_spin,section_spin,day_spin;
     private Button viewtt;
     Toolbar toolbar;
+    ArrayList<String> BranchYear = new ArrayList<String>();
+
     public void addItemBranchSpinner(){
         branch_spin=(Spinner) findViewById (R.id.branch_spin);
         List<String> list =new ArrayList<String> ();
         list.add("Select branch");
+        list.add("CSE");
         list.add("ME");
-        list.add("CS");
         list.add("ECE");
         list.add("EEE");
         list.add("CE");
@@ -175,7 +177,7 @@ public class timetable extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 if(branch[0].equals ("Select Branch") || year[0].equals ("Select Year") || day[0].equals ("Select Day") || section[0].equals("Select Section")){ return;}
-                ArrayList<String> BranchYear = new ArrayList<String>();
+//                ArrayList<String> BranchYear = new ArrayList<String>();
                 BranchYear.add(branch[0]);
                 if(year[0] == "First")
                     BranchYear.add("1");

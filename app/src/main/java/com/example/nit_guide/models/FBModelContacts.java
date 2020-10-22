@@ -2,7 +2,7 @@ package com.example.nit_guide.models;
 
 public class FBModelContacts {
     private String name;
-    private String Designation;
+    private String designation;
     private String cont;
     private String email;
 
@@ -11,7 +11,7 @@ public class FBModelContacts {
 
     public FBModelContacts(String name, String designation, String cont, String email) {
         this.name = name;
-        Designation = designation;
+        this.designation = designation;
         this.cont = cont;
         this.email = email;
     }
@@ -25,11 +25,11 @@ public class FBModelContacts {
     }
 
     public String getDesignation() {
-        return Designation;
+        return designation;
     }
 
     public void setDesignation(String designation) {
-        Designation = designation;
+        this.designation = designation;
     }
 
     public String getCont() {

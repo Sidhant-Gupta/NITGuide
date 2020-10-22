@@ -28,7 +28,7 @@ public class FirebaseDbHelper {
         FirebaseDatabase.getInstance();
         mDatabase = FirebaseDatabase.getInstance();
         mmReferencecontact = mDatabase.getReference();
-        mReferencecontact=mmReferencecontact.child(intentMsg);
+        mReferencecontact=mmReferencecontact.child("Department").child(intentMsg).child("Contacts");
     }
 
     public void readContacts(final DataStatus datastatus){

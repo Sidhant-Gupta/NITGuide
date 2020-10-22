@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,11 +17,21 @@ import android.widget.ImageView;
 
 import com.example.nit_guide.R;
 import com.example.nit_guide.adapters.AdapterContacts;
-import com.example.nit_guide.adapters.AdapterTimetable;
+import com.example.nit_guide.adapters.TimeTableOpen;
+import com.example.nit_guide.db_contact;
 import com.example.nit_guide.models.ModelContacts;
 import com.example.nit_guide.models.ModelTimetable;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +41,7 @@ import java.util.ArrayList;
  * Use the {@link ftab_timetable#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteListener {
+public class ftab_timetable extends Fragment  {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -39,11 +51,20 @@ public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteL
     View rootView;
     private String mParam1;
     private String mParam2;
-    private AdapterTimetable adapter;
+    private TimeTableOpen adapter;
     private RecyclerView recyclerView;
     private ImageView dayImg;
     private int tabno;
+    private ArrayList<ModelTimetable> holder=new ArrayList<>();
     ArrayList<ModelTimetable> timeTableList;
+    ArrayList<String> intentMsg;
+     String branch,section,year;
+
+    Context mcontext=null ;
+
+    interface DataReceivedListener{
+        void onDataReceived(ArrayList<ModelTimetable> timetable,List<String>keys);
+    }
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,7 +99,11 @@ public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteL
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         timeTableList=new ArrayList<>();
-        timeTableList=dataqueue();
+        intentMsg =getActivity().getIntent ( ).getStringArrayListExtra ("Branch, Year, Day and Section");
+        branch = intentMsg.get (0);
+        year = intentMsg.get (1);
+        section = intentMsg.get (3);
+        dataqueue();
     }
 
     @Override
@@ -90,6 +115,9 @@ public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteL
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_timetable);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         dayImg=(ImageView)rootView.findViewById((R.id.minion_mon));
+
+        intentMsg =getActivity().getIntent ( ).getStringArrayListExtra ("Branch, Year, Day and Section");
+
         if(tabno==0)
             dayImg.setImageResource(R.drawable.tt_monday);
         else if(tabno==1)
@@ -101,66 +129,73 @@ public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteL
         else if(tabno==4)
             dayImg.setImageResource(R.drawable.tt_friday);
 
-        adapter=new AdapterTimetable(getContext(),timeTableList,this);
-        recyclerView.setAdapter(adapter);
+        mcontext=getContext();
+        List<String>keys=new ArrayList<>();
+        timeTableList=new ArrayList<>();
+        dataqueue();
+        new TimeTableOpen().setConfig(recyclerView,getContext(),timeTableList,keys);
 
         return rootView;
     }
+//    ArrayList<ModelTimetable>
+    public void dataqueue(){
+//        ArrayList<ModelTimetable> holder=new ArrayList<>();
+        final DataSnapshot snapshot=null;
+        String day;
+        switch(tabno){
+            case 1:
+                day="Monday";
+                break;
+            case 2:
+                day="Tuesday";
+                break;
+            case 3:
+                day="Wednesday";
+                break;
+            case 4:
+                day="Thursday";
+                break;
+            case 5:
+                day="Friday";
+                break;
+            default:
+                day="Monday";
+                break;
+        }
+        System.out.println("DAYYYYYYYYY "+day);
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Department").child(intentMsg.get(0).toString()).child("TimeTable").child(intentMsg.get(1).toString()).child(intentMsg.get(3).toString()).child(day);
 
-    public ArrayList<ModelTimetable> dataqueue(){
-        ArrayList<ModelTimetable> holder=new ArrayList<>();
-        ModelTimetable ob1=new ModelTimetable();
-        ob1.setTime("830-9:25 am");;
-        ob1.setSubject("DBMS");
-        ob1.setRoom("LHC 201");
-        ob1.setImg(R.drawable.blue_dot);
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                holder.clear();
+                List<String> keys=new ArrayList<>();
+                for(DataSnapshot keynode:dataSnapshot.getChildren()){
+                    keys.add(keynode.getKey());
+                    ModelTimetable ob1=keynode.getValue(ModelTimetable.class);
 
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
-        holder.add(ob1);
+                    holder.add(ob1);
+                    System.out.println("OBJECTTT"+ob1);
+                }
+                System.out.println("ppppppppppppppppppppppppppppppp");
+//                new TimeTableOpen().setConfig(recyclerView,mcontext,holder,keys);
 
-//        ModelTimetable ob2=new ModelTimetable();
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//
-//        ModelTimetable ob1=new ModelTimetable();
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//
-//        ModelTimetable ob1=new ModelTimetable();
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//
-//        ModelTimetable ob1=new ModelTimetable();
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//
-//        ModelTimetable ob1=new ModelTimetable();
-//        ob1.setTime("830-9:25 am");;
-//        ob1.setSubject("DBMS");
-//        ob1.setImg(R.drawable.dep);
-//        holder.add(ob1);
-//
+                onDataRecieved(holder,keys);
 
-        return holder;
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+//        return holder;
+
+    }
+    public void onDataRecieved(ArrayList<ModelTimetable> timetable,List<String>keys){
+        System.out.println("heloooooooooooooooooooooooooooooooo");
+        new TimeTableOpen().setConfig(recyclerView,mcontext,timetable,keys);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -185,11 +220,6 @@ public class ftab_timetable extends Fragment implements AdapterTimetable.onNoteL
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    @Override
-    public void onNoteClick(int position) {
-
     }
 
     /**
