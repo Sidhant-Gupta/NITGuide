@@ -99,10 +99,10 @@ public class ftab_timetable extends Fragment  {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         timeTableList=new ArrayList<>();
-        intentMsg =getActivity().getIntent ( ).getStringArrayListExtra ("Branch, Year, Day and Section");
+        intentMsg =getActivity().getIntent ( ).getStringArrayListExtra ("Branch, Year, Section");
         branch = intentMsg.get (0);
         year = intentMsg.get (1);
-        section = intentMsg.get (3);
+        section = intentMsg.get (2);
         dataqueue();
     }
 
@@ -162,7 +162,7 @@ public class ftab_timetable extends Fragment  {
         }
         System.out.println("Taaaaaabbbb noooo "+tabno);
         System.out.println("DAYYYYYYYYY "+day);
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Department").child(intentMsg.get(0).toString()).child("TimeTable").child(intentMsg.get(1).toString()).child(intentMsg.get(3).toString()).child(day);
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Department").child(branch).child("TimeTable").child(year).child(section).child(day);
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
