@@ -60,6 +60,8 @@ public class timetable_open extends AppCompatActivity {
 
             }
         });
+        // listen for scroll or page change
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
     private void setUpToolbar(){
         toolbar=(Toolbar) findViewById(R.id.toolbar);

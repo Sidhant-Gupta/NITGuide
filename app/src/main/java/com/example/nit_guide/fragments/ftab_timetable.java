@@ -109,9 +109,9 @@ public class ftab_timetable extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         rootView = inflater.inflate(R.layout.fragment_ftab_timetable, container, false);
-        // 1. get a reference to recyclerView
+
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_timetable);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         dayImg=(ImageView)rootView.findViewById((R.id.minion_mon));
@@ -137,31 +137,30 @@ public class ftab_timetable extends Fragment  {
 
         return rootView;
     }
-//    ArrayList<ModelTimetable>
     public void dataqueue(){
-//        ArrayList<ModelTimetable> holder=new ArrayList<>();
         final DataSnapshot snapshot=null;
         String day;
         switch(tabno){
-            case 1:
+            case 0:
                 day="Monday";
                 break;
-            case 2:
+            case 1:
                 day="Tuesday";
                 break;
-            case 3:
+            case 2:
                 day="Wednesday";
                 break;
-            case 4:
+            case 3:
                 day="Thursday";
                 break;
-            case 5:
+            case 4:
                 day="Friday";
                 break;
             default:
                 day="Monday";
                 break;
         }
+        System.out.println("Taaaaaabbbb noooo "+tabno);
         System.out.println("DAYYYYYYYYY "+day);
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Department").child(intentMsg.get(0).toString()).child("TimeTable").child(intentMsg.get(1).toString()).child(intentMsg.get(3).toString()).child(day);
 
@@ -173,15 +172,9 @@ public class ftab_timetable extends Fragment  {
                 for(DataSnapshot keynode:dataSnapshot.getChildren()){
                     keys.add(keynode.getKey());
                     ModelTimetable ob1=keynode.getValue(ModelTimetable.class);
-
                     holder.add(ob1);
-                    System.out.println("OBJECTTT"+ob1);
                 }
-                System.out.println("ppppppppppppppppppppppppppppppp");
-//                new TimeTableOpen().setConfig(recyclerView,mcontext,holder,keys);
-
                 onDataRecieved(holder,keys);
-
             }
 
             @Override
@@ -189,12 +182,8 @@ public class ftab_timetable extends Fragment  {
 
             }
         });
-
-//        return holder;
-
     }
     public void onDataRecieved(ArrayList<ModelTimetable> timetable,List<String>keys){
-        System.out.println("heloooooooooooooooooooooooooooooooo");
         new TimeTableOpen().setConfig(recyclerView,mcontext,timetable,keys);
     }
 

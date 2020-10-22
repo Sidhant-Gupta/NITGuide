@@ -39,7 +39,7 @@ public class TimeTableOpen {
 
     private AdapterTimeTable adapterTimeTable;
     public void setConfig(RecyclerView recyclerView, Context mcontext, ArrayList<ModelTimetable> periods, List<String> keys){
-        System.out.println("qqqqqqqqqqqqqqqqq");
+        System.out.println("Adapterrr setttttttt");
         context=mcontext;
         adapterTimeTable=new AdapterTimeTable(periods,keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));

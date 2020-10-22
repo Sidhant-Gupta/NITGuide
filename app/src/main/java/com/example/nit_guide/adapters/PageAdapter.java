@@ -48,7 +48,7 @@ public class PageAdapter extends FragmentPagerAdapter {
                 case 4:
                     return new ftab_timetable(4);
                 default:
-                    return new ftab_timetable(5);
+                    return new ftab_timetable(0);
             }
         }
         else{
